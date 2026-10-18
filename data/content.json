@@ -1,0 +1,2687 @@
+{
+  "theme": {
+    "preset": "trust",
+    "dark": "#0B2545",
+    "brand": "#087E8B",
+    "accent": "#F4B942",
+    "accentInk": "#1A1300"
+  },
+  "settings": {
+    "brandName": "Tripnexa",
+    "logoText": "TN",
+    "tagline": "The travel API for OTAs, TMCs and travel platforms",
+    "description": "One connection to flights, hotels, transfers, rail, visas and more. Built for travel businesses that want to launch fast and scale without re-platforming.",
+    "email": "hello@tripnexa.com",
+    "phone": "+880 1700-000000",
+    "whatsapp": "+880 1700-000000",
+    "address": "Level 12, Gulshan Avenue\nDhaka 1212, Bangladesh",
+    "company": "Tripnexa Technologies Ltd.",
+    "facebook": "#",
+    "linkedin": "#",
+    "youtube": "#",
+    "footerNote": "Engineered for the next generation of travel.",
+    "ctaLabel": "Request API Access"
+  },
+  "announcement": {
+    "enabled": true,
+    "eyebrow": "New · Unified NDC + LCC search",
+    "title": "Every fare source, one response.",
+    "text": "Search GDS, airline-direct NDC and low-cost carriers in a single call, with results merged, de-duplicated and ranked before they reach you.",
+    "links": [
+      "Migration guide",
+      "Compare options",
+      "Flight API"
+    ]
+  },
+  "hero": {
+    "badge": "Travel API for OTAs, TMCs and travel platforms",
+    "titleLines": [
+      "One travel API.",
+      "Flights, hotels and more"
+    ],
+    "highlight": "in one schema",
+    "subtitle": "Search, book and ticket across global distribution systems, airline-direct NDC and low-cost carriers, plus hotels, transfers, rail, eSIM and visas, through a single integration. No supplier contracts to sign and a flat fee per booking instead of a percentage.",
+    "primaryCta": "Request API Access",
+    "secondaryCta": "Explore the API",
+    "videoLabel": "Watch the 60-second tour",
+    "trustPoints": [
+      "No GDS contract needed",
+      "Flat fee, never a percentage",
+      "Free sandbox in minutes"
+    ]
+  },
+  "stats": [
+    {
+      "id": "s1",
+      "value": 700,
+      "prefix": "",
+      "suffix": "+",
+      "label": "Airlines & LCC connections",
+      "visible": true
+    },
+    {
+      "id": "s2",
+      "value": 2,
+      "prefix": "",
+      "suffix": "M+",
+      "label": "Hotel properties worldwide",
+      "visible": true
+    },
+    {
+      "id": "s3",
+      "value": 12,
+      "prefix": "",
+      "suffix": "",
+      "label": "Product families, one integration",
+      "visible": true
+    },
+    {
+      "id": "s4",
+      "value": 1,
+      "prefix": "<",
+      "suffix": "s",
+      "label": "Typical search response time",
+      "visible": true
+    }
+  ],
+  "playground": [
+    {
+      "id": "p1",
+      "label": "Flights",
+      "icon": "plane",
+      "method": "POST",
+      "endpoint": "/v1/flight/search",
+      "latency": 642,
+      "visible": true,
+      "request": "{\n  \"journey_type\": \"OneWay\",\n  \"segments\": [\n    {\n      \"from\": \"DAC\",\n      \"to\": \"DXB\",\n      \"date\": \"2026-12-14\"\n    }\n  ],\n  \"travelers\": {\n    \"adults\": 1\n  },\n  \"cabin\": \"Economy\"\n}",
+      "response": "{\n  \"status\": \"ok\",\n  \"results\": 148,\n  \"sources\": [\n    \"GDS\",\n    \"NDC\",\n    \"LCC\"\n  ],\n  \"cheapest\": {\n    \"carrier\": \"XY\",\n    \"fare\": 312.4,\n    \"currency\": \"USD\",\n    \"stops\": 0\n  }\n}"
+    },
+    {
+      "id": "p2",
+      "label": "Hotels",
+      "icon": "building",
+      "method": "POST",
+      "endpoint": "/v1/hotel/search",
+      "latency": 518,
+      "visible": true,
+      "request": "{\n  \"destination\": \"Bali, ID\",\n  \"check_in\": \"2026-12-20\",\n  \"check_out\": \"2026-12-24\",\n  \"rooms\": [\n    {\n      \"adults\": 2\n    }\n  ]\n}",
+      "response": "{\n  \"status\": \"ok\",\n  \"properties\": 1204,\n  \"top\": {\n    \"name\": \"Ocean Cliff Resort\",\n    \"stars\": 5,\n    \"from\": 189,\n    \"currency\": \"USD\",\n    \"refundable\": true\n  }\n}"
+    },
+    {
+      "id": "p3",
+      "label": "Transfers",
+      "icon": "car",
+      "method": "POST",
+      "endpoint": "/v1/transfer/search",
+      "latency": 377,
+      "visible": true,
+      "request": "{\n  \"pickup\": \"DXB Terminal 3\",\n  \"dropoff\": \"Downtown Dubai\",\n  \"datetime\": \"2026-12-14T18:30\",\n  \"passengers\": 2\n}",
+      "response": "{\n  \"status\": \"ok\",\n  \"options\": 9,\n  \"best\": {\n    \"vehicle\": \"Sedan\",\n    \"price\": 38,\n    \"currency\": \"USD\",\n    \"meet_greet\": true\n  }\n}"
+    },
+    {
+      "id": "p4",
+      "label": "eSIM",
+      "icon": "qr",
+      "method": "GET",
+      "endpoint": "/v1/esim/plans?country=AE",
+      "latency": 214,
+      "visible": true,
+      "request": "{\n  \"country\": \"AE\",\n  \"days\": 7\n}",
+      "response": "{\n  \"status\": \"ok\",\n  \"plans\": [\n    {\n      \"data\": \"5 GB\",\n      \"days\": 7,\n      \"price\": 9.5\n    },\n    {\n      \"data\": \"Unlimited\",\n      \"days\": 7,\n      \"price\": 21\n    }\n  ]\n}"
+    }
+  ],
+  "partners": [
+    {
+      "id": "pa1",
+      "name": "Global GDS",
+      "visible": true
+    },
+    {
+      "id": "pa2",
+      "name": "NDC Airlines",
+      "visible": true
+    },
+    {
+      "id": "pa3",
+      "name": "Low-cost Carriers",
+      "visible": true
+    },
+    {
+      "id": "pa4",
+      "name": "Hotel Chains",
+      "visible": true
+    },
+    {
+      "id": "pa5",
+      "name": "Bed Banks",
+      "visible": true
+    },
+    {
+      "id": "pa6",
+      "name": "Rail Operators",
+      "visible": true
+    },
+    {
+      "id": "pa7",
+      "name": "Transfer Networks",
+      "visible": true
+    },
+    {
+      "id": "pa8",
+      "name": "eSIM Carriers",
+      "visible": true
+    }
+  ],
+  "about": {
+    "eyebrow": "About us",
+    "title": "The infrastructure layer for modern travel businesses.",
+    "paragraphs": [
+      "We aggregate inventory from global distribution systems, low-cost carriers, hotel chains, transfer and rail suppliers and tour operators, then expose it through one normalized REST API. Connect once and reach a worldwide supply network without negotiating individual contracts or juggling data formats.",
+      "We are a technology intermediary, not a travel operator. Bookings are fulfilled by the underlying suppliers; we provide the connectivity, normalization and developer experience so your team can focus on product, not plumbing."
+    ]
+  },
+  "benefits": [
+    {
+      "id": "b1",
+      "icon": "rocket",
+      "title": "Sell from day one",
+      "text": "Ready-to-use, normalized endpoints across every category, so you can take bookings in your first week.",
+      "visible": true
+    },
+    {
+      "id": "b2",
+      "icon": "merge",
+      "title": "Single integration",
+      "text": "Hundreds of global suppliers behind one clean API. No SDK sprawl, no per-supplier quirks.",
+      "visible": true
+    },
+    {
+      "id": "b3",
+      "icon": "layers",
+      "title": "Zero complexity",
+      "text": "We absorb the supplier contracts, formats and edge cases so your engineers don't have to.",
+      "visible": true
+    },
+    {
+      "id": "b4",
+      "icon": "trending",
+      "title": "Scale without limits",
+      "text": "From your first booking to millions, without rebuilding your stack mid-flight.",
+      "visible": true
+    }
+  ],
+  "products": [
+    {
+      "id": "pr1",
+      "slug": "flight-api",
+      "name": "Flight Aggregation API",
+      "icon": "plane",
+      "tone": "brand",
+      "short": "GDS, NDC and low-cost carriers worldwide with real-time availability, dynamic pricing and instant ticketing.",
+      "description": "Search hundreds of airlines across GDS, airline-direct NDC and low-cost carriers in one request. Results arrive merged, de-duplicated and ranked, with branded fares, ancillaries and seat maps in one schema.",
+      "features": [
+        "Unified GDS + NDC + LCC search",
+        "Branded fares & ancillaries",
+        "Seat maps and SSRs",
+        "Instant ticketing & void",
+        "Post-booking changes and refunds"
+      ],
+      "endpoints": [
+        "POST /v1/flight/search",
+        "POST /v1/flight/price",
+        "POST /v1/flight/book",
+        "POST /v1/flight/ticket"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr2",
+      "slug": "hotel-api",
+      "name": "Hotel Booking API",
+      "icon": "building",
+      "tone": "violet",
+      "short": "Millions of properties, from 5-star resorts to budget stays, with rich content and live availability.",
+      "description": "Content-rich hotel inventory mapped to a single property ID, with photos, amenities, cancellation policies and live rates from multiple suppliers.",
+      "features": [
+        "2M+ properties mapped",
+        "Rich content and imagery",
+        "Live rates & availability",
+        "Flexible cancellation data",
+        "Multi-room bookings"
+      ],
+      "endpoints": [
+        "POST /v1/hotel/search",
+        "GET /v1/hotel/{id}",
+        "POST /v1/hotel/book"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr3",
+      "slug": "transfer-api",
+      "name": "Transfer API",
+      "icon": "car",
+      "tone": "sky",
+      "short": "Private and airport transfers between airports, hotels and city addresses: search, book and cancel.",
+      "description": "Door-to-door transfers worldwide with fixed prices, vehicle classes and meet & greet options.",
+      "features": [
+        "Airport, hotel & address pickups",
+        "Fixed upfront pricing",
+        "Meet & greet add-on",
+        "Free cancellation windows"
+      ],
+      "endpoints": [
+        "POST /v1/transfer/search",
+        "POST /v1/transfer/book"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr4",
+      "slug": "car-rental-api",
+      "name": "Car Rental API",
+      "icon": "carFront",
+      "tone": "indigo",
+      "short": "Self-drive rentals from global providers: every vehicle class, real-time rates, one-way rentals and extras.",
+      "description": "Compare rental providers side by side with normalized vehicle classes, insurance products and extras.",
+      "features": [
+        "Global rental providers",
+        "One-way rentals",
+        "Insurance & extras",
+        "Normalized vehicle classes"
+      ],
+      "endpoints": [
+        "POST /v1/car/search",
+        "POST /v1/car/book"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr5",
+      "slug": "activities-api",
+      "name": "Activities & Tours API",
+      "icon": "ticket",
+      "tone": "amber",
+      "short": "Local tours, unique experiences, theme park tickets and iconic attractions worldwide.",
+      "description": "Bookable experiences with live availability, timeslots and instant mobile vouchers.",
+      "features": [
+        "300k+ experiences",
+        "Timeslot availability",
+        "Instant mobile vouchers",
+        "Multi-language content"
+      ],
+      "endpoints": [
+        "GET /v1/activity/search",
+        "POST /v1/activity/book"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr6",
+      "slug": "tour-package-api",
+      "name": "Tour Package API",
+      "icon": "map",
+      "tone": "violet",
+      "short": "Pre-packaged tours with city search, tour details, price validation, ordering and issuance in one flow.",
+      "description": "Sell curated multi-day packages with itineraries, inclusions and validated pricing.",
+      "features": [
+        "City and theme search",
+        "Day-by-day itineraries",
+        "Price validation",
+        "Order & issuance"
+      ],
+      "endpoints": [
+        "GET /v1/package/search",
+        "POST /v1/package/order"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr7",
+      "slug": "train-api",
+      "name": "Train API",
+      "icon": "train",
+      "tone": "sky",
+      "short": "Search rail journeys, validate fares, book and cancel tickets next to your flight results.",
+      "description": "Rail inventory alongside air, so travellers can compare door-to-door options in one place.",
+      "features": [
+        "Point-to-point rail",
+        "Fare validation",
+        "E-tickets",
+        "Cancellations"
+      ],
+      "endpoints": [
+        "POST /v1/rail/search",
+        "POST /v1/rail/book"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr8",
+      "slug": "visa-api",
+      "name": "Visa API",
+      "icon": "stamp",
+      "tone": "indigo",
+      "short": "Search visa packages, validate requirements and create the application in the same checkout.",
+      "description": "Visa requirements and applications bundled into the booking flow, reducing drop-off.",
+      "features": [
+        "Requirement lookup",
+        "Document checklist",
+        "Application orders",
+        "Status tracking"
+      ],
+      "endpoints": [
+        "GET /v1/visa/requirements",
+        "POST /v1/visa/apply"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr9",
+      "slug": "lounge-api",
+      "name": "Business Lounge API",
+      "icon": "sofa",
+      "tone": "emerald",
+      "short": "Airport lounge access as a checkout add-on: seating, food, Wi-Fi and shower suites worldwide.",
+      "description": "Upsell lounge access at checkout with instant confirmation and QR passes.",
+      "features": [
+        "1,500+ lounges",
+        "Instant QR passes",
+        "Checkout upsell",
+        "Flexible cancellation"
+      ],
+      "endpoints": [
+        "GET /v1/lounge/search",
+        "POST /v1/lounge/book"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr10",
+      "slug": "fast-track-api",
+      "name": "Fast Track API",
+      "icon": "fast",
+      "tone": "sky",
+      "short": "Priority lanes through security, immigration and customs at 200+ airports.",
+      "description": "Departure, arrival and transit fast track services with a dedicated agent.",
+      "features": [
+        "200+ airports",
+        "Departure & arrival",
+        "Transit assistance"
+      ],
+      "endpoints": [
+        "GET /v1/fasttrack/search",
+        "POST /v1/fasttrack/book"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr11",
+      "slug": "meet-greet-api",
+      "name": "Meet & Greet API",
+      "icon": "handshake",
+      "tone": "rose",
+      "short": "A multilingual assistant meets travellers on arrival, handles bags and escorts them through.",
+      "description": "VIP arrival and departure assistance for premium travellers and families.",
+      "features": [
+        "Multilingual assistants",
+        "Baggage help",
+        "VIP escorts"
+      ],
+      "endpoints": [
+        "POST /v1/meetgreet/book"
+      ],
+      "visible": true
+    },
+    {
+      "id": "pr12",
+      "slug": "esim-api",
+      "name": "Travel eSIM API",
+      "icon": "qr",
+      "tone": "violet",
+      "short": "Instant QR-code eSIM activation on premium local networks in 175+ countries.",
+      "description": "Sell data plans with instant activation, no roaming bills and in-app top-ups.",
+      "features": [
+        "175+ countries",
+        "Instant QR activation",
+        "Top-ups",
+        "Usage tracking"
+      ],
+      "endpoints": [
+        "GET /v1/esim/plans",
+        "POST /v1/esim/order"
+      ],
+      "visible": true
+    }
+  ],
+  "useCases": [
+    {
+      "id": "u1",
+      "icon": "monitor",
+      "tone": "rose",
+      "title": "Online Travel Agencies",
+      "text": "Launch a full consumer marketplace with flights, hotels, activities and transfers from one integration.",
+      "visible": true
+    },
+    {
+      "id": "u2",
+      "icon": "briefcase",
+      "tone": "indigo",
+      "title": "Corporate Travel Platforms",
+      "text": "Power TMC tools with policy controls, negotiated rates and approval flows.",
+      "visible": true
+    },
+    {
+      "id": "u3",
+      "icon": "building",
+      "tone": "violet",
+      "title": "Booking Engines & SaaS",
+      "text": "White-label booking infrastructure for vertical SaaS, hotel groups and tour operators.",
+      "visible": true
+    },
+    {
+      "id": "u4",
+      "icon": "bulb",
+      "tone": "amber",
+      "title": "Travel-Tech Startups",
+      "text": "Skip the year-long supplier approval cycle and ship your MVP in weeks.",
+      "visible": true
+    },
+    {
+      "id": "u5",
+      "icon": "cart",
+      "tone": "emerald",
+      "title": "E-commerce & Loyalty",
+      "text": "Add travel to existing storefronts, points programs and reward platforms.",
+      "visible": true
+    },
+    {
+      "id": "u6",
+      "icon": "cpu",
+      "tone": "sky",
+      "title": "AI Travel Agents",
+      "text": "Feed conversational and agentic travel apps with structured, machine-readable inventory.",
+      "visible": true
+    }
+  ],
+  "reasons": [
+    {
+      "id": "r1",
+      "icon": "rocket",
+      "title": "Zero to launch in days",
+      "text": "Skip lengthy supplier approvals and complex coding. Integrate once and start selling.",
+      "visible": true
+    },
+    {
+      "id": "r2",
+      "icon": "globe",
+      "title": "Global supply network",
+      "text": "Worldwide inventory without negotiating contracts region by region.",
+      "visible": true
+    },
+    {
+      "id": "r3",
+      "icon": "trending",
+      "title": "Built for scale",
+      "text": "Infrastructure designed for high-volume OTAs and fast-growing startups.",
+      "visible": true
+    },
+    {
+      "id": "r4",
+      "icon": "code",
+      "title": "Developer-friendly",
+      "text": "Clean architecture, normalized JSON, sandbox keys and real engineers on support.",
+      "visible": true
+    }
+  ],
+  "compare": [
+    {
+      "id": "c1",
+      "label": "Time to first booking",
+      "us": "Days",
+      "them": "6–12 months",
+      "visible": true
+    },
+    {
+      "id": "c2",
+      "label": "Supplier contracts",
+      "us": "1",
+      "them": "Dozens",
+      "visible": true
+    },
+    {
+      "id": "c3",
+      "label": "Data normalization",
+      "us": "yes",
+      "them": "no",
+      "visible": true
+    },
+    {
+      "id": "c4",
+      "label": "Sandbox environment",
+      "us": "yes",
+      "them": "Limited",
+      "visible": true
+    },
+    {
+      "id": "c5",
+      "label": "Multi-category coverage",
+      "us": "yes",
+      "them": "no",
+      "visible": true
+    },
+    {
+      "id": "c6",
+      "label": "Engineering overhead",
+      "us": "Low",
+      "them": "Very high",
+      "visible": true
+    }
+  ],
+  "steps": [
+    {
+      "id": "st1",
+      "title": "Sign up",
+      "text": "Register your business and receive sandbox API credentials instantly.",
+      "visible": true
+    },
+    {
+      "id": "st2",
+      "title": "Integrate",
+      "text": "Plug the API into your web or mobile app with clean docs and SDK examples.",
+      "visible": true
+    },
+    {
+      "id": "st3",
+      "title": "Go live",
+      "text": "Flip to production and offer global inventory to your customers.",
+      "visible": true
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "quote": "We replaced four supplier integrations with one and launched our flight vertical in three weeks.",
+      "name": "Ayesha Rahman",
+      "role": "CTO",
+      "company": "SkyBazaar",
+      "rating": 5,
+      "visible": true
+    },
+    {
+      "id": "t2",
+      "quote": "The normalized schema is the real win. Our engineers stopped firefighting supplier quirks.",
+      "name": "Daniel Okafor",
+      "role": "Head of Engineering",
+      "company": "Wayfare",
+      "rating": 5,
+      "visible": true
+    },
+    {
+      "id": "t3",
+      "quote": "Flat per-booking pricing made our unit economics predictable from day one.",
+      "name": "Mei Tanaka",
+      "role": "Founder",
+      "company": "Kozue Travel",
+      "rating": 5,
+      "visible": true
+    },
+    {
+      "id": "t4",
+      "quote": "Sandbox to production in under a month, with support that actually answers.",
+      "name": "Rafael Lima",
+      "role": "Product Lead",
+      "company": "Viajei",
+      "rating": 5,
+      "visible": true
+    }
+  ],
+  "faqs": [
+    {
+      "id": "f1",
+      "question": "What is this platform?",
+      "answer": "A unified travel API that gives you flights, hotels, transfers, rail, activities, visas and more through one normalized REST integration.",
+      "visible": true
+    },
+    {
+      "id": "f2",
+      "question": "Who is it for?",
+      "answer": "OTAs, TMCs, corporate booking tools, travel-tech startups, loyalty programs and AI travel agents.",
+      "visible": true
+    },
+    {
+      "id": "f3",
+      "question": "What inventory does the API support?",
+      "answer": "Flights (GDS, NDC and LCC), hotels, transfers, car rental, activities, tour packages, rail, visas, lounges, fast track, meet & greet, eSIM and events.",
+      "visible": true
+    },
+    {
+      "id": "f4",
+      "question": "How long does integration take?",
+      "answer": "Most teams make their first sandbox booking within a day and go live within two to six weeks.",
+      "visible": true
+    },
+    {
+      "id": "f5",
+      "question": "Are you a travel agent or an infrastructure provider?",
+      "answer": "An infrastructure provider. Bookings are fulfilled by the underlying suppliers; we provide connectivity and normalization.",
+      "visible": true
+    },
+    {
+      "id": "f6",
+      "question": "How is data secured?",
+      "answer": "TLS everywhere, encrypted storage, scoped API keys, IP allow-listing and audit logs.",
+      "visible": true
+    },
+    {
+      "id": "f7",
+      "question": "How do I get API access?",
+      "answer": "Request access, book a short kick-off call and receive sandbox credentials the same day.",
+      "visible": true
+    }
+  ],
+  "resources": [
+    {
+      "id": "re1",
+      "tag": "Guide",
+      "title": "Best travel APIs compared",
+      "text": "How a unified aggregator stacks up against GDS-direct and single-airline NDC.",
+      "visible": true
+    },
+    {
+      "id": "re2",
+      "tag": "Playbook",
+      "title": "Migrating from a legacy GDS integration",
+      "text": "An endpoint map and a step-by-step migration plan.",
+      "visible": true
+    },
+    {
+      "id": "re3",
+      "tag": "Explainer",
+      "title": "What is a travel API aggregator?",
+      "text": "One connection to many suppliers: how it works and when it pays off.",
+      "visible": true
+    }
+  ],
+  "headings": {
+    "partners": {
+      "eyebrow": "Connected supply",
+      "title": "Inventory from every corner of travel",
+      "subtitle": ""
+    },
+    "benefits": {
+      "eyebrow": "Why now",
+      "title": "Launch your travel business in days, not months.",
+      "subtitle": "Traditional travel integrations are slow, fragmented and expensive. We change that, whether you're building an OTA, a corporate tool or a niche platform."
+    },
+    "products": {
+      "eyebrow": "Our ecosystem",
+      "title": "One API. Unlimited travel inventory.",
+      "subtitle": "Structured, normalized and ready to sell. Reach the whole globe through a single connection."
+    },
+    "usecases": {
+      "eyebrow": "Use cases",
+      "title": "Built for the businesses shaping modern travel.",
+      "subtitle": "From scrappy startups to established platforms, we're the foundation underneath."
+    },
+    "why": {
+      "eyebrow": "Why choose us",
+      "title": "Go from startup to global travel agency, fast.",
+      "subtitle": ""
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Start selling in three simple steps.",
+      "subtitle": "Going live has never been easier."
+    },
+    "testimonials": {
+      "eyebrow": "Loved by builders",
+      "title": "Teams ship faster with us.",
+      "subtitle": ""
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Everything you need to know.",
+      "subtitle": "Can't find what you're looking for? Get in touch."
+    },
+    "resources": {
+      "eyebrow": "Resources",
+      "title": "Go deeper in the Playbook",
+      "subtitle": ""
+    }
+  },
+  "cta": {
+    "title": "Start in the sandbox. Go live when you're ready.",
+    "text": "Book a short kick-off call, get sandbox credentials at no charge, and build against the same schema you'll use in production.",
+    "primary": "Book a demo",
+    "secondary": "Talk to sales"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "label": "Hero + API playground",
+      "visible": true
+    },
+    {
+      "id": "stats",
+      "label": "Stats bar",
+      "visible": true
+    },
+    {
+      "id": "partners",
+      "label": "Connected supply marquee",
+      "visible": true
+    },
+    {
+      "id": "announcement",
+      "label": "Announcement band",
+      "visible": true
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "visible": true
+    },
+    {
+      "id": "benefits",
+      "label": "Benefits",
+      "visible": true
+    },
+    {
+      "id": "products",
+      "label": "Products grid",
+      "visible": true
+    },
+    {
+      "id": "usecases",
+      "label": "Use cases",
+      "visible": true
+    },
+    {
+      "id": "why",
+      "label": "Why us + comparison",
+      "visible": true
+    },
+    {
+      "id": "steps",
+      "label": "How it works",
+      "visible": true
+    },
+    {
+      "id": "testimonials",
+      "label": "Testimonials",
+      "visible": true
+    },
+    {
+      "id": "faq",
+      "label": "FAQ",
+      "visible": true
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "visible": true
+    },
+    {
+      "id": "cta",
+      "label": "Final call to action",
+      "visible": true
+    }
+  ],
+  "navigation": [
+    {
+      "id": "nav-products",
+      "label": "Products",
+      "type": "products",
+      "href": "/#products",
+      "highlight": false,
+      "badge": "",
+      "visible": true,
+      "children": []
+    },
+    {
+      "id": "nav-coverage",
+      "label": "Coverage",
+      "type": "dropdown",
+      "href": "",
+      "highlight": true,
+      "badge": "",
+      "visible": true,
+      "children": [
+        {
+          "id": "nc1",
+          "label": "Flight coverage",
+          "href": "/coverage/flights",
+          "icon": "plane",
+          "description": "Airlines, GDS, NDC and LCC content by region"
+        },
+        {
+          "id": "nc2",
+          "label": "Hotel coverage",
+          "href": "/coverage/hotels",
+          "icon": "building",
+          "description": "Properties and chains across 200+ countries"
+        },
+        {
+          "id": "nc3",
+          "label": "Airports",
+          "href": "/coverage/airports",
+          "icon": "luggage",
+          "description": "Search airports with services available"
+        },
+        {
+          "id": "nc4",
+          "label": "Regions & markets",
+          "href": "/coverage/regions",
+          "icon": "globe",
+          "description": "Point-of-sale markets and currencies"
+        }
+      ]
+    },
+    {
+      "id": "nav-hotels",
+      "label": "Hotels",
+      "type": "link",
+      "href": "/hotels",
+      "highlight": false,
+      "badge": "",
+      "visible": true,
+      "children": []
+    },
+    {
+      "id": "nav-gds",
+      "label": "GDS",
+      "type": "link",
+      "href": "/gds",
+      "highlight": false,
+      "badge": "",
+      "visible": true,
+      "children": []
+    },
+    {
+      "id": "nav-ndc",
+      "label": "NDC",
+      "type": "link",
+      "href": "/ndc",
+      "highlight": true,
+      "badge": "New",
+      "visible": true,
+      "children": []
+    },
+    {
+      "id": "nav-dev",
+      "label": "Developers",
+      "type": "dropdown",
+      "href": "",
+      "highlight": false,
+      "badge": "",
+      "visible": true,
+      "children": [
+        {
+          "id": "nd1",
+          "label": "Developer hub",
+          "href": "/developers",
+          "icon": "code",
+          "description": "Everything you need to build"
+        },
+        {
+          "id": "nd2",
+          "label": "Quickstart",
+          "href": "/developers/quickstart",
+          "icon": "rocket",
+          "description": "First booking in under an hour"
+        },
+        {
+          "id": "nd3",
+          "label": "API reference",
+          "href": "/developers/api-reference",
+          "icon": "layers",
+          "description": "Every endpoint, one schema"
+        },
+        {
+          "id": "nd4",
+          "label": "Changelog",
+          "href": "/developers/changelog",
+          "icon": "trending",
+          "description": "What shipped and when"
+        },
+        {
+          "id": "nd5",
+          "label": "System status",
+          "href": "/developers/status",
+          "icon": "zap",
+          "description": "Live health of every service"
+        }
+      ]
+    },
+    {
+      "id": "nav-uc",
+      "label": "Use Cases",
+      "type": "link",
+      "href": "/#usecases",
+      "highlight": false,
+      "badge": "",
+      "visible": true,
+      "children": []
+    },
+    {
+      "id": "nav-faq",
+      "label": "FAQ",
+      "type": "link",
+      "href": "/#faq",
+      "highlight": false,
+      "badge": "",
+      "visible": true,
+      "children": []
+    }
+  ],
+  "pages": [
+    {
+      "id": "pg-cov-flights",
+      "slug": "coverage/flights",
+      "title": "Flight coverage",
+      "visible": true,
+      "seoDescription": "Airline content across GDS, NDC and low-cost carriers, by region.",
+      "hero": {
+        "eyebrow": "Coverage · Flights",
+        "title": "700+ airlines.",
+        "highlight": "One search.",
+        "subtitle": "Full-service carriers through global distribution systems, airline-direct NDC offers and low-cost carriers, merged into one ranked response.",
+        "primaryLabel": "Request API Access",
+        "primaryHref": "/contact",
+        "secondaryLabel": "See the Flight API",
+        "secondaryHref": "/products/flight-api",
+        "art": "orbit",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "plane",
+          "globe",
+          "ticket",
+          "luggage",
+          "zap",
+          "star"
+        ],
+        "chips": [
+          "GDS + NDC + LCC",
+          "Branded fares",
+          "Ancillaries & seats"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "b-5",
+          "type": "stats",
+          "visible": true,
+          "items": [
+            {
+              "id": "i-1",
+              "prefix": "",
+              "value": 700,
+              "suffix": "+",
+              "label": "Airlines connected"
+            },
+            {
+              "id": "i-2",
+              "prefix": "",
+              "value": 67,
+              "suffix": "",
+              "label": "Low-cost carriers"
+            },
+            {
+              "id": "i-3",
+              "prefix": "",
+              "value": 190,
+              "suffix": "+",
+              "label": "Countries served"
+            },
+            {
+              "id": "i-4",
+              "prefix": "",
+              "value": 3,
+              "suffix": "",
+              "label": "Content sources merged"
+            }
+          ]
+        },
+        {
+          "id": "b-22",
+          "type": "coverage",
+          "visible": true,
+          "eyebrow": "Explore",
+          "title": "Airline content by region",
+          "subtitle": "Filter by region or search by name, code or content type.",
+          "searchPlaceholder": "Search carriers, codes or content type…",
+          "regions": [
+            {
+              "id": "i-6",
+              "name": "South Asia",
+              "value": "86",
+              "label": "airlines"
+            },
+            {
+              "id": "i-7",
+              "name": "Middle East",
+              "value": "74",
+              "label": "airlines"
+            },
+            {
+              "id": "i-8",
+              "name": "Europe",
+              "value": "168",
+              "label": "airlines"
+            },
+            {
+              "id": "i-9",
+              "name": "East Asia",
+              "value": "142",
+              "label": "airlines"
+            },
+            {
+              "id": "i-10",
+              "name": "North America",
+              "value": "96",
+              "label": "airlines"
+            },
+            {
+              "id": "i-11",
+              "name": "Africa",
+              "value": "58",
+              "label": "airlines"
+            }
+          ],
+          "items": [
+            {
+              "id": "i-12",
+              "name": "Full-service carriers",
+              "code": "GDS",
+              "region": "South Asia",
+              "meta": "Published & private fares",
+              "tags": "GDS, Branded fares"
+            },
+            {
+              "id": "i-13",
+              "name": "Regional low-cost carriers",
+              "code": "LCC",
+              "region": "South Asia",
+              "meta": "Direct API connections",
+              "tags": "LCC, Bundles"
+            },
+            {
+              "id": "i-14",
+              "name": "Gulf network carriers",
+              "code": "NDC",
+              "region": "Middle East",
+              "meta": "Rich offers & continuous pricing",
+              "tags": "NDC, Ancillaries"
+            },
+            {
+              "id": "i-15",
+              "name": "Middle East low-cost",
+              "code": "LCC",
+              "region": "Middle East",
+              "meta": "Seats & bags at booking",
+              "tags": "LCC"
+            },
+            {
+              "id": "i-16",
+              "name": "European flag carriers",
+              "code": "NDC",
+              "region": "Europe",
+              "meta": "NDC-first content",
+              "tags": "NDC, GDS"
+            },
+            {
+              "id": "i-17",
+              "name": "European low-cost",
+              "code": "LCC",
+              "region": "Europe",
+              "meta": "Point-to-point fares",
+              "tags": "LCC, Bundles"
+            },
+            {
+              "id": "i-18",
+              "name": "East Asian carriers",
+              "code": "GDS",
+              "region": "East Asia",
+              "meta": "Full GDS inventory",
+              "tags": "GDS"
+            },
+            {
+              "id": "i-19",
+              "name": "Asia-Pacific low-cost",
+              "code": "LCC",
+              "region": "East Asia",
+              "meta": "Direct connections",
+              "tags": "LCC"
+            },
+            {
+              "id": "i-20",
+              "name": "North American majors",
+              "code": "NDC",
+              "region": "North America",
+              "meta": "NDC + GDS fallback",
+              "tags": "NDC, GDS"
+            },
+            {
+              "id": "i-21",
+              "name": "African carriers",
+              "code": "GDS",
+              "region": "Africa",
+              "meta": "Regional networks",
+              "tags": "GDS"
+            }
+          ]
+        },
+        {
+          "id": "b-28",
+          "type": "compare",
+          "visible": true,
+          "eyebrow": "Content sources",
+          "title": "Three sources, one schema",
+          "subtitle": "",
+          "usLabel": "Unified API",
+          "themLabel": "Single source",
+          "rows": [
+            {
+              "id": "i-23",
+              "label": "GDS content",
+              "us": "yes",
+              "them": "yes"
+            },
+            {
+              "id": "i-24",
+              "label": "Airline-direct NDC offers",
+              "us": "yes",
+              "them": "no"
+            },
+            {
+              "id": "i-25",
+              "label": "Low-cost carriers",
+              "us": "yes",
+              "them": "no"
+            },
+            {
+              "id": "i-26",
+              "label": "De-duplicated results",
+              "us": "yes",
+              "them": "no"
+            },
+            {
+              "id": "i-27",
+              "label": "One booking flow",
+              "us": "yes",
+              "them": "Per source"
+            }
+          ]
+        },
+        {
+          "id": "b-29",
+          "type": "cta",
+          "visible": true,
+          "title": "Need a carrier that isn't listed?",
+          "text": "Tell us your markets and we'll confirm content before you integrate.",
+          "primary": "Get sandbox keys",
+          "primaryHref": "/contact",
+          "secondary": "Talk to an engineer",
+          "secondaryHref": "/contact"
+        }
+      ]
+    },
+    {
+      "id": "pg-cov-hotels",
+      "slug": "coverage/hotels",
+      "title": "Hotel coverage",
+      "visible": true,
+      "seoDescription": "Two million properties mapped to a single ID.",
+      "hero": {
+        "eyebrow": "Coverage · Hotels",
+        "title": "2M+ properties.",
+        "highlight": "Mapped once.",
+        "subtitle": "Chains, independents and apartments from multiple suppliers, de-duplicated to a single property ID with rich content.",
+        "primaryLabel": "Request API Access",
+        "primaryHref": "/contact",
+        "secondaryLabel": "Hotel API",
+        "secondaryHref": "/hotels",
+        "art": "orbit",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "building",
+          "hotel",
+          "star",
+          "map",
+          "wallet",
+          "globe"
+        ],
+        "chips": [
+          "Rich content",
+          "Live rates",
+          "Free cancellation data"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "b-34",
+          "type": "stats",
+          "visible": true,
+          "items": [
+            {
+              "id": "i-30",
+              "prefix": "",
+              "value": 2,
+              "suffix": "M+",
+              "label": "Properties"
+            },
+            {
+              "id": "i-31",
+              "prefix": "",
+              "value": 200,
+              "suffix": "+",
+              "label": "Countries"
+            },
+            {
+              "id": "i-32",
+              "prefix": "",
+              "value": 98,
+              "suffix": "%",
+              "label": "Mapping accuracy"
+            },
+            {
+              "id": "i-33",
+              "prefix": "",
+              "value": 30,
+              "suffix": "+",
+              "label": "Languages of content"
+            }
+          ]
+        },
+        {
+          "id": "b-51",
+          "type": "coverage",
+          "visible": true,
+          "eyebrow": "Explore",
+          "title": "Properties by region",
+          "subtitle": "Top destinations and property mix in each region.",
+          "searchPlaceholder": "Search destinations…",
+          "regions": [
+            {
+              "id": "i-35",
+              "name": "South Asia",
+              "value": "180k",
+              "label": "properties"
+            },
+            {
+              "id": "i-36",
+              "name": "Middle East",
+              "value": "140k",
+              "label": "properties"
+            },
+            {
+              "id": "i-37",
+              "name": "Europe",
+              "value": "620k",
+              "label": "properties"
+            },
+            {
+              "id": "i-38",
+              "name": "East Asia",
+              "value": "410k",
+              "label": "properties"
+            },
+            {
+              "id": "i-39",
+              "name": "North America",
+              "value": "390k",
+              "label": "properties"
+            },
+            {
+              "id": "i-40",
+              "name": "Africa",
+              "value": "90k",
+              "label": "properties"
+            }
+          ],
+          "items": [
+            {
+              "id": "i-41",
+              "name": "Dhaka",
+              "code": "DAC",
+              "region": "South Asia",
+              "meta": "4,200 properties",
+              "tags": "City, Business"
+            },
+            {
+              "id": "i-42",
+              "name": "Cox's Bazar",
+              "code": "CXB",
+              "region": "South Asia",
+              "meta": "1,100 properties",
+              "tags": "Beach, Resort"
+            },
+            {
+              "id": "i-43",
+              "name": "Dubai",
+              "code": "DXB",
+              "region": "Middle East",
+              "meta": "11,800 properties",
+              "tags": "City, Luxury"
+            },
+            {
+              "id": "i-44",
+              "name": "Makkah",
+              "code": "MKK",
+              "region": "Middle East",
+              "meta": "2,600 properties",
+              "tags": "Religious, City"
+            },
+            {
+              "id": "i-45",
+              "name": "London",
+              "code": "LON",
+              "region": "Europe",
+              "meta": "24,000 properties",
+              "tags": "City"
+            },
+            {
+              "id": "i-46",
+              "name": "Paris",
+              "code": "PAR",
+              "region": "Europe",
+              "meta": "21,500 properties",
+              "tags": "City, Romance"
+            },
+            {
+              "id": "i-47",
+              "name": "Bangkok",
+              "code": "BKK",
+              "region": "East Asia",
+              "meta": "16,300 properties",
+              "tags": "City, Budget"
+            },
+            {
+              "id": "i-48",
+              "name": "Bali",
+              "code": "DPS",
+              "region": "East Asia",
+              "meta": "13,900 properties",
+              "tags": "Beach, Villa"
+            },
+            {
+              "id": "i-49",
+              "name": "New York",
+              "code": "NYC",
+              "region": "North America",
+              "meta": "9,700 properties",
+              "tags": "City"
+            },
+            {
+              "id": "i-50",
+              "name": "Cape Town",
+              "code": "CPT",
+              "region": "Africa",
+              "meta": "5,400 properties",
+              "tags": "City, Nature"
+            }
+          ]
+        },
+        {
+          "id": "b-52",
+          "type": "cta",
+          "visible": true,
+          "title": "Looking for a specific chain or market?",
+          "text": "We'll share a coverage report for your destinations.",
+          "primary": "Get sandbox keys",
+          "primaryHref": "/contact",
+          "secondary": "Talk to an engineer",
+          "secondaryHref": "/contact"
+        }
+      ]
+    },
+    {
+      "id": "pg-cov-airports",
+      "slug": "coverage/airports",
+      "title": "Airports",
+      "visible": true,
+      "seoDescription": "Airports with flights, transfers, lounges and fast track available.",
+      "hero": {
+        "eyebrow": "Coverage · Airports",
+        "title": "Every journey starts",
+        "highlight": "at an airport.",
+        "subtitle": "Search airports to see which services you can sell there: flights, transfers, lounges, fast track and meet & greet.",
+        "primaryLabel": "Request API Access",
+        "primaryHref": "/contact",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "art": "orbit",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "luggage",
+          "plane",
+          "sofa",
+          "fast",
+          "handshake",
+          "car"
+        ],
+        "chips": [
+          "4,000+ airports",
+          "Lounges at 1,500+",
+          "Fast track at 200+"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "b-70",
+          "type": "coverage",
+          "visible": true,
+          "eyebrow": "Airport finder",
+          "title": "Services by airport",
+          "subtitle": "Type a city, airport name or IATA code.",
+          "searchPlaceholder": "Search by city, airport or IATA code…",
+          "regions": [
+            {
+              "id": "i-53",
+              "name": "South Asia",
+              "value": "310",
+              "label": "airports"
+            },
+            {
+              "id": "i-54",
+              "name": "Middle East",
+              "value": "240",
+              "label": "airports"
+            },
+            {
+              "id": "i-55",
+              "name": "Europe",
+              "value": "980",
+              "label": "airports"
+            },
+            {
+              "id": "i-56",
+              "name": "East Asia",
+              "value": "820",
+              "label": "airports"
+            },
+            {
+              "id": "i-57",
+              "name": "North America",
+              "value": "1150",
+              "label": "airports"
+            },
+            {
+              "id": "i-58",
+              "name": "Africa",
+              "value": "420",
+              "label": "airports"
+            }
+          ],
+          "items": [
+            {
+              "id": "i-59",
+              "name": "Hazrat Shahjalal International",
+              "code": "DAC",
+              "region": "South Asia",
+              "meta": "Dhaka, Bangladesh",
+              "tags": "Flights, Transfers, Lounge, Fast track"
+            },
+            {
+              "id": "i-60",
+              "name": "Chattogram Shah Amanat",
+              "code": "CGP",
+              "region": "South Asia",
+              "meta": "Chattogram, Bangladesh",
+              "tags": "Flights, Transfers"
+            },
+            {
+              "id": "i-61",
+              "name": "Indira Gandhi International",
+              "code": "DEL",
+              "region": "South Asia",
+              "meta": "Delhi, India",
+              "tags": "Flights, Transfers, Lounge, Meet & greet"
+            },
+            {
+              "id": "i-62",
+              "name": "Dubai International",
+              "code": "DXB",
+              "region": "Middle East",
+              "meta": "Dubai, UAE",
+              "tags": "Flights, Transfers, Lounge, Fast track, Meet & greet"
+            },
+            {
+              "id": "i-63",
+              "name": "Hamad International",
+              "code": "DOH",
+              "region": "Middle East",
+              "meta": "Doha, Qatar",
+              "tags": "Flights, Transfers, Lounge"
+            },
+            {
+              "id": "i-64",
+              "name": "London Heathrow",
+              "code": "LHR",
+              "region": "Europe",
+              "meta": "London, UK",
+              "tags": "Flights, Transfers, Lounge, Fast track"
+            },
+            {
+              "id": "i-65",
+              "name": "Istanbul Airport",
+              "code": "IST",
+              "region": "Europe",
+              "meta": "Istanbul, Türkiye",
+              "tags": "Flights, Transfers, Lounge"
+            },
+            {
+              "id": "i-66",
+              "name": "Singapore Changi",
+              "code": "SIN",
+              "region": "East Asia",
+              "meta": "Singapore",
+              "tags": "Flights, Transfers, Lounge, Fast track"
+            },
+            {
+              "id": "i-67",
+              "name": "Suvarnabhumi",
+              "code": "BKK",
+              "region": "East Asia",
+              "meta": "Bangkok, Thailand",
+              "tags": "Flights, Transfers, Fast track"
+            },
+            {
+              "id": "i-68",
+              "name": "John F. Kennedy International",
+              "code": "JFK",
+              "region": "North America",
+              "meta": "New York, USA",
+              "tags": "Flights, Transfers, Lounge"
+            },
+            {
+              "id": "i-69",
+              "name": "O. R. Tambo International",
+              "code": "JNB",
+              "region": "Africa",
+              "meta": "Johannesburg, South Africa",
+              "tags": "Flights, Transfers, Lounge"
+            }
+          ]
+        },
+        {
+          "id": "b-74",
+          "type": "cards",
+          "visible": true,
+          "eyebrow": "Airport services",
+          "title": "Sell more than the flight",
+          "subtitle": "",
+          "items": [
+            {
+              "id": "i-71",
+              "title": "Business lounges",
+              "icon": "sofa",
+              "href": "/products/lounge-api",
+              "label": "Lounge API",
+              "text": "Checkout add-on with instant QR passes."
+            },
+            {
+              "id": "i-72",
+              "title": "Fast track",
+              "icon": "fast",
+              "href": "/products/fast-track-api",
+              "label": "Fast Track API",
+              "text": "Priority lanes through security and immigration."
+            },
+            {
+              "id": "i-73",
+              "title": "Meet & greet",
+              "icon": "handshake",
+              "href": "/products/meet-greet-api",
+              "label": "Meet & Greet API",
+              "text": "A personal assistant from gate to car."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pg-cov-regions",
+      "slug": "coverage/regions",
+      "title": "Regions & markets",
+      "visible": true,
+      "seoDescription": "Point-of-sale markets, currencies and settlement options.",
+      "hero": {
+        "eyebrow": "Coverage · Markets",
+        "title": "Sell from anywhere,",
+        "highlight": "to everywhere.",
+        "subtitle": "Point-of-sale support for 190+ markets with local currencies, local content and flexible settlement.",
+        "primaryLabel": "Request API Access",
+        "primaryHref": "/contact",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "art": "orbit",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "globe",
+          "wallet",
+          "map",
+          "compass",
+          "chart",
+          "users"
+        ],
+        "chips": [
+          "150+ currencies",
+          "Local POS pricing",
+          "Multi-currency settlement"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "b-78",
+          "type": "features",
+          "visible": true,
+          "eyebrow": "Built for global sellers",
+          "title": "Local where it matters",
+          "subtitle": "",
+          "columns": "3",
+          "items": [
+            {
+              "id": "i-75",
+              "icon": "wallet",
+              "title": "Local currencies",
+              "text": "Display and settle in 150+ currencies with transparent FX."
+            },
+            {
+              "id": "i-76",
+              "icon": "map",
+              "title": "Point-of-sale pricing",
+              "text": "Fares and rates priced for the market your customer books from."
+            },
+            {
+              "id": "i-77",
+              "icon": "shield",
+              "title": "Compliance built in",
+              "text": "Market-specific fare rules, taxes and documentation handled for you."
+            }
+          ]
+        },
+        {
+          "id": "b-94",
+          "type": "coverage",
+          "visible": true,
+          "eyebrow": "Markets",
+          "title": "Supported markets",
+          "subtitle": "",
+          "searchPlaceholder": "Search countries or currencies…",
+          "regions": [
+            {
+              "id": "i-79",
+              "name": "South Asia",
+              "value": "8",
+              "label": "markets"
+            },
+            {
+              "id": "i-80",
+              "name": "Middle East",
+              "value": "14",
+              "label": "markets"
+            },
+            {
+              "id": "i-81",
+              "name": "Europe",
+              "value": "44",
+              "label": "markets"
+            },
+            {
+              "id": "i-82",
+              "name": "East Asia",
+              "value": "18",
+              "label": "markets"
+            },
+            {
+              "id": "i-83",
+              "name": "North America",
+              "value": "3",
+              "label": "markets"
+            },
+            {
+              "id": "i-84",
+              "name": "Africa",
+              "value": "54",
+              "label": "markets"
+            }
+          ],
+          "items": [
+            {
+              "id": "i-85",
+              "name": "Bangladesh",
+              "code": "BDT",
+              "region": "South Asia",
+              "meta": "Local POS, BDT settlement",
+              "tags": "Flights, Hotels, Visas"
+            },
+            {
+              "id": "i-86",
+              "name": "India",
+              "code": "INR",
+              "region": "South Asia",
+              "meta": "Local POS",
+              "tags": "Flights, Hotels, Rail"
+            },
+            {
+              "id": "i-87",
+              "name": "United Arab Emirates",
+              "code": "AED",
+              "region": "Middle East",
+              "meta": "Local POS",
+              "tags": "Flights, Hotels, Transfers"
+            },
+            {
+              "id": "i-88",
+              "name": "Saudi Arabia",
+              "code": "SAR",
+              "region": "Middle East",
+              "meta": "Local POS",
+              "tags": "Flights, Hotels, Visas"
+            },
+            {
+              "id": "i-89",
+              "name": "United Kingdom",
+              "code": "GBP",
+              "region": "Europe",
+              "meta": "Local POS",
+              "tags": "Flights, Hotels, Rail"
+            },
+            {
+              "id": "i-90",
+              "name": "Germany",
+              "code": "EUR",
+              "region": "Europe",
+              "meta": "Local POS",
+              "tags": "Flights, Hotels, Rail"
+            },
+            {
+              "id": "i-91",
+              "name": "Malaysia",
+              "code": "MYR",
+              "region": "East Asia",
+              "meta": "Local POS",
+              "tags": "Flights, Hotels"
+            },
+            {
+              "id": "i-92",
+              "name": "United States",
+              "code": "USD",
+              "region": "North America",
+              "meta": "Local POS",
+              "tags": "Flights, Hotels, Cars"
+            },
+            {
+              "id": "i-93",
+              "name": "Kenya",
+              "code": "KES",
+              "region": "Africa",
+              "meta": "Local POS",
+              "tags": "Flights, Hotels"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pg-hotels",
+      "slug": "hotels",
+      "title": "Hotels",
+      "visible": true,
+      "seoDescription": "Hotel booking API with 2M+ properties, rich content and live rates.",
+      "hero": {
+        "eyebrow": "Hotel API",
+        "title": "Every room,",
+        "highlight": "one property ID.",
+        "subtitle": "Search, price and book two million properties from multiple suppliers. We de-duplicate, map and enrich so your customers see one clean listing.",
+        "primaryLabel": "Request API Access",
+        "primaryHref": "/contact",
+        "secondaryLabel": "Hotel coverage",
+        "secondaryHref": "/coverage/hotels",
+        "art": "code",
+        "codeTitle": "POST /v1/hotel/search",
+        "code": "{\n  \"destination\": \"Cox's Bazar, BD\",\n  \"check_in\": \"2026-12-20\",\n  \"nights\": 3,\n  \"rooms\": [\n    {\n      \"adults\": 2,\n      \"children\": [\n        6\n      ]\n    }\n  ],\n  \"filters\": {\n    \"stars\": [\n      4,\n      5\n    ],\n    \"refundable\": true\n  }\n}",
+        "orbitIcons": [
+          "plane",
+          "building",
+          "train",
+          "car",
+          "globe",
+          "ticket"
+        ],
+        "chips": [
+          "2M+ properties",
+          "Rich content",
+          "Instant confirmation"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "b-99",
+          "type": "features",
+          "visible": true,
+          "eyebrow": "Why our hotel API",
+          "title": "Content that converts",
+          "subtitle": "Better data means fewer support tickets and more bookings.",
+          "columns": "4",
+          "items": [
+            {
+              "id": "i-95",
+              "icon": "layers",
+              "title": "One property, one ID",
+              "text": "Multi-supplier inventory mapped and de-duplicated."
+            },
+            {
+              "id": "i-96",
+              "icon": "star",
+              "title": "Rich content",
+              "text": "HD photos, amenities, reviews and room-level details."
+            },
+            {
+              "id": "i-97",
+              "icon": "wallet",
+              "title": "Best available rate",
+              "text": "Rates from every supplier compared on each search."
+            },
+            {
+              "id": "i-98",
+              "icon": "shield",
+              "title": "Clear policies",
+              "text": "Normalized cancellation, taxes and fees."
+            }
+          ]
+        },
+        {
+          "id": "b-100",
+          "type": "split",
+          "visible": true,
+          "eyebrow": "Developer experience",
+          "title": "Search to booking in three calls",
+          "text": "Search returns priced rooms in one response. Re-price before checkout, then book with a single request.",
+          "bullets": [
+            "Room-level availability and pricing",
+            "Package rates bundled with flights",
+            "Webhooks for booking status changes"
+          ],
+          "codeTitle": "Response · 200 OK",
+          "reverse": false,
+          "code": "{\n  \"properties\": 1204,\n  \"top\": {\n    \"id\": \"H-88213\",\n    \"name\": \"Seaside Grand\",\n    \"stars\": 5,\n    \"from\": {\n      \"amount\": 142,\n      \"currency\": \"USD\"\n    },\n    \"refundable_until\": \"2026-12-17\"\n  }\n}"
+        },
+        {
+          "id": "b-104",
+          "type": "steps",
+          "visible": true,
+          "eyebrow": "Booking flow",
+          "title": "Search · Price · Book",
+          "subtitle": "",
+          "items": [
+            {
+              "id": "i-101",
+              "title": "Search",
+              "text": "Destination, dates and guests return priced rooms."
+            },
+            {
+              "id": "i-102",
+              "title": "Price",
+              "text": "Confirm the final rate and policies before payment."
+            },
+            {
+              "id": "i-103",
+              "title": "Book",
+              "text": "Instant confirmation with supplier reference."
+            }
+          ]
+        },
+        {
+          "id": "b-108",
+          "type": "faq",
+          "visible": true,
+          "eyebrow": "FAQ",
+          "title": "Hotel API questions",
+          "subtitle": "",
+          "items": [
+            {
+              "id": "i-105",
+              "question": "How many suppliers are behind the API?",
+              "answer": "Multiple bed banks and direct chain connections, mapped to one property ID."
+            },
+            {
+              "id": "i-106",
+              "question": "Do you support package rates?",
+              "answer": "Yes. Package rates can be sold when bundled with a flight in the same booking."
+            },
+            {
+              "id": "i-107",
+              "question": "How are cancellations handled?",
+              "answer": "Policies are normalized to a single format and cancellations are one API call."
+            }
+          ]
+        },
+        {
+          "id": "b-109",
+          "type": "cta",
+          "visible": true,
+          "title": "Start selling hotels this week",
+          "text": "Sandbox keys today, live bookings as soon as you're ready.",
+          "primary": "Get sandbox keys",
+          "primaryHref": "/contact",
+          "secondary": "Talk to an engineer",
+          "secondaryHref": "/contact"
+        }
+      ]
+    },
+    {
+      "id": "pg-gds",
+      "slug": "gds",
+      "title": "GDS",
+      "visible": true,
+      "seoDescription": "GDS content without a GDS contract.",
+      "hero": {
+        "eyebrow": "GDS connectivity",
+        "title": "GDS content.",
+        "highlight": "No GDS contract.",
+        "subtitle": "Get global distribution system fares through one REST API, with a sandbox and without certification, PCCs or long-term commitments.",
+        "primaryLabel": "Request API Access",
+        "primaryHref": "/contact",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "art": "orbit",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "globe",
+          "plane",
+          "layers",
+          "shield",
+          "zap",
+          "merge"
+        ],
+        "chips": [
+          "No certification",
+          "No PCC setup",
+          "REST + JSON"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "b-110",
+          "type": "logos",
+          "visible": true,
+          "title": "Content from the world's major distribution systems",
+          "items": [
+            "Global GDS",
+            "Published fares",
+            "Private fares",
+            "Corporate fares",
+            "Branded fares",
+            "Ancillaries"
+          ]
+        },
+        {
+          "id": "b-117",
+          "type": "compare",
+          "visible": true,
+          "eyebrow": "The difference",
+          "title": "Direct GDS vs. our API",
+          "subtitle": "",
+          "usLabel": "Our API",
+          "themLabel": "Direct GDS",
+          "rows": [
+            {
+              "id": "i-111",
+              "label": "Time to first booking",
+              "us": "Days",
+              "them": "6–12 months"
+            },
+            {
+              "id": "i-112",
+              "label": "Certification required",
+              "us": "no",
+              "them": "yes"
+            },
+            {
+              "id": "i-113",
+              "label": "Protocol",
+              "us": "REST/JSON",
+              "them": "SOAP/EDIFACT"
+            },
+            {
+              "id": "i-114",
+              "label": "Sandbox",
+              "us": "yes",
+              "them": "Limited"
+            },
+            {
+              "id": "i-115",
+              "label": "Pricing",
+              "us": "Flat per booking",
+              "them": "Segment fees + minimums"
+            },
+            {
+              "id": "i-116",
+              "label": "NDC and LCC in the same call",
+              "us": "yes",
+              "them": "no"
+            }
+          ]
+        },
+        {
+          "id": "b-121",
+          "type": "features",
+          "visible": true,
+          "eyebrow": "What you get",
+          "title": "All the GDS power, none of the plumbing",
+          "subtitle": "",
+          "columns": "3",
+          "items": [
+            {
+              "id": "i-118",
+              "icon": "code",
+              "title": "Modern API",
+              "text": "Clean REST endpoints and JSON instead of legacy terminal commands."
+            },
+            {
+              "id": "i-119",
+              "icon": "ticket",
+              "title": "Ticketing included",
+              "text": "Issue, void and refund tickets through the same API."
+            },
+            {
+              "id": "i-120",
+              "icon": "support",
+              "title": "Expert support",
+              "text": "Travel-tech engineers who know fare rules inside out."
+            }
+          ]
+        },
+        {
+          "id": "b-122",
+          "type": "cta",
+          "visible": true,
+          "title": "Moving off a legacy GDS integration?",
+          "text": "We'll map your current endpoints and plan the migration with you.",
+          "primary": "Get sandbox keys",
+          "primaryHref": "/contact",
+          "secondary": "Talk to an engineer",
+          "secondaryHref": "/contact"
+        }
+      ]
+    },
+    {
+      "id": "pg-ndc",
+      "slug": "ndc",
+      "title": "NDC",
+      "visible": true,
+      "seoDescription": "Airline-direct NDC offers through one API.",
+      "hero": {
+        "eyebrow": "NDC",
+        "title": "Airline-direct offers,",
+        "highlight": "without the integrations.",
+        "subtitle": "Access NDC content from leading airlines (richer bundles, continuous pricing and exclusive fares) alongside GDS and LCC in the same response.",
+        "primaryLabel": "Request API Access",
+        "primaryHref": "/contact",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "art": "code",
+        "codeTitle": "NDC offer · normalized",
+        "code": "{\n  \"source\": \"NDC\",\n  \"offer_id\": \"OF-29X1\",\n  \"brand\": \"Comfort Plus\",\n  \"price\": {\n    \"total\": 418.2,\n    \"currency\": \"USD\"\n  },\n  \"includes\": [\n    \"23kg bag\",\n    \"Seat selection\",\n    \"Free changes\"\n  ],\n  \"expires_in\": 1200\n}",
+        "orbitIcons": [
+          "plane",
+          "building",
+          "train",
+          "car",
+          "globe",
+          "ticket"
+        ],
+        "chips": [
+          "Exclusive fares",
+          "Rich bundles",
+          "One schema"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "b-123",
+          "type": "richtext",
+          "visible": true,
+          "eyebrow": "What is NDC?",
+          "title": "The new standard for airline retailing",
+          "paragraphs": [
+            "New Distribution Capability (NDC) is an XML standard that lets airlines sell rich offers directly to agencies: branded bundles, ancillaries and dynamic prices that legacy channels can't carry.",
+            "Each airline implements NDC differently. We connect to them once, normalize their offers and give you a single schema shared with GDS and low-cost content."
+          ]
+        },
+        {
+          "id": "b-128",
+          "type": "features",
+          "visible": true,
+          "eyebrow": "Benefits",
+          "title": "Why sell NDC content",
+          "subtitle": "",
+          "columns": "4",
+          "items": [
+            {
+              "id": "i-124",
+              "icon": "wallet",
+              "title": "Lower prices",
+              "text": "Fares unavailable in legacy channels."
+            },
+            {
+              "id": "i-125",
+              "icon": "star",
+              "title": "Richer offers",
+              "text": "Bundles with bags, seats and flexibility."
+            },
+            {
+              "id": "i-126",
+              "icon": "sparkles",
+              "title": "Better merchandising",
+              "text": "Images and descriptions for each fare brand."
+            },
+            {
+              "id": "i-127",
+              "icon": "merge",
+              "title": "One integration",
+              "text": "Every NDC airline through the same endpoints."
+            }
+          ]
+        },
+        {
+          "id": "b-129",
+          "type": "split",
+          "visible": true,
+          "eyebrow": "Normalized",
+          "title": "Different airlines, identical JSON",
+          "text": "Our normalization layer turns every airline's NDC dialect into the same offer object, so your UI code never branches per carrier.",
+          "bullets": [
+            "Offer and order management",
+            "Servicing: changes, cancellations, refunds",
+            "Automatic fallback to GDS when NDC is unavailable"
+          ],
+          "codeTitle": "Order created",
+          "reverse": true,
+          "code": "{\n  \"order_id\": \"ORD-7713\",\n  \"status\": \"ticketed\",\n  \"passengers\": 2,\n  \"services\": [\n    \"bag\",\n    \"seat-14A\",\n    \"seat-14B\"\n  ]\n}"
+        },
+        {
+          "id": "b-132",
+          "type": "faq",
+          "visible": true,
+          "eyebrow": "FAQ",
+          "title": "NDC questions",
+          "subtitle": "",
+          "items": [
+            {
+              "id": "i-130",
+              "question": "Do I need agreements with each airline?",
+              "answer": "No. We hold the connections; you integrate once with our API."
+            },
+            {
+              "id": "i-131",
+              "question": "What happens if an NDC offer is unavailable?",
+              "answer": "We automatically fall back to GDS or LCC content for that route."
+            }
+          ]
+        },
+        {
+          "id": "b-133",
+          "type": "cta",
+          "visible": true,
+          "title": "Add NDC content in days",
+          "text": "Get sandbox access with live NDC test offers.",
+          "primary": "Get sandbox keys",
+          "primaryHref": "/contact",
+          "secondary": "Talk to an engineer",
+          "secondaryHref": "/contact"
+        }
+      ]
+    },
+    {
+      "id": "pg-dev",
+      "slug": "developers",
+      "title": "Developer hub",
+      "visible": true,
+      "seoDescription": "Docs, quickstart, API reference, changelog and status.",
+      "hero": {
+        "eyebrow": "Developers",
+        "title": "Built by engineers,",
+        "highlight": "for engineers.",
+        "subtitle": "One REST API, one JSON schema, predictable errors and a sandbox that behaves like production.",
+        "primaryLabel": "Start the quickstart",
+        "primaryHref": "/developers/quickstart",
+        "secondaryLabel": "API reference",
+        "secondaryHref": "/developers/api-reference",
+        "art": "code",
+        "codeTitle": "curl",
+        "code": "{\n  \"request\": \"curl -X POST https://sandbox.api.example.com/v1/flight/search\",\n  \"headers\": {\n    \"Authorization\": \"Bearer sk_test_…\"\n  },\n  \"body\": {\n    \"from\": \"DAC\",\n    \"to\": \"KUL\",\n    \"date\": \"2026-11-02\"\n  }\n}",
+        "orbitIcons": [
+          "plane",
+          "building",
+          "train",
+          "car",
+          "globe",
+          "ticket"
+        ],
+        "chips": [
+          "OpenAPI 3.1",
+          "SDK examples",
+          "99.95% uptime"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "b-140",
+          "type": "cards",
+          "visible": true,
+          "eyebrow": "Start here",
+          "title": "Everything you need to build",
+          "subtitle": "",
+          "items": [
+            {
+              "id": "i-134",
+              "title": "Quickstart",
+              "icon": "rocket",
+              "href": "/developers/quickstart",
+              "label": "Start building",
+              "text": "Make your first search and booking in under an hour."
+            },
+            {
+              "id": "i-135",
+              "title": "API reference",
+              "icon": "layers",
+              "href": "/developers/api-reference",
+              "label": "Browse endpoints",
+              "text": "Every endpoint across every product, in one schema."
+            },
+            {
+              "id": "i-136",
+              "title": "Changelog",
+              "icon": "trending",
+              "href": "/developers/changelog",
+              "label": "See releases",
+              "text": "New features, improvements and deprecations."
+            },
+            {
+              "id": "i-137",
+              "title": "System status",
+              "icon": "zap",
+              "href": "/developers/status",
+              "label": "Check status",
+              "text": "Live health and uptime for every service."
+            },
+            {
+              "id": "i-138",
+              "title": "Coverage",
+              "icon": "globe",
+              "href": "/coverage/flights",
+              "label": "Explore coverage",
+              "text": "Which content is available in which markets."
+            },
+            {
+              "id": "i-139",
+              "title": "Talk to an engineer",
+              "icon": "support",
+              "href": "/contact",
+              "label": "Get in touch",
+              "text": "Real engineers, not a ticket queue."
+            }
+          ]
+        },
+        {
+          "id": "b-144",
+          "type": "features",
+          "visible": true,
+          "eyebrow": "Developer experience",
+          "title": "Designed to be pleasant",
+          "subtitle": "",
+          "columns": "3",
+          "items": [
+            {
+              "id": "i-141",
+              "icon": "code",
+              "title": "Consistent schema",
+              "text": "Same shapes, naming and pagination across all products."
+            },
+            {
+              "id": "i-142",
+              "icon": "shield",
+              "title": "Idempotent bookings",
+              "text": "Safe retries with idempotency keys on every write."
+            },
+            {
+              "id": "i-143",
+              "icon": "zap",
+              "title": "Webhooks",
+              "text": "Booking, ticketing and schedule-change events pushed to you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pg-dev-quick",
+      "slug": "developers/quickstart",
+      "title": "Quickstart",
+      "visible": true,
+      "seoDescription": "From sandbox keys to your first booking.",
+      "hero": {
+        "eyebrow": "Quickstart",
+        "title": "Your first booking",
+        "highlight": "in under an hour.",
+        "subtitle": "Four steps from sandbox keys to a confirmed test booking.",
+        "primaryLabel": "Get sandbox keys",
+        "primaryHref": "/contact",
+        "secondaryLabel": "API reference",
+        "secondaryHref": "/developers/api-reference",
+        "art": "none",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "plane",
+          "building",
+          "train",
+          "car",
+          "globe",
+          "ticket"
+        ],
+        "chips": []
+      },
+      "blocks": [
+        {
+          "id": "b-149",
+          "type": "steps",
+          "visible": true,
+          "eyebrow": "Overview",
+          "title": "Four steps",
+          "subtitle": "",
+          "items": [
+            {
+              "id": "i-145",
+              "title": "Get keys",
+              "text": "Request access and receive sandbox credentials."
+            },
+            {
+              "id": "i-146",
+              "title": "Search",
+              "text": "Call /v1/flight/search with a route and date."
+            },
+            {
+              "id": "i-147",
+              "title": "Price",
+              "text": "Re-price the chosen offer to lock the fare."
+            },
+            {
+              "id": "i-148",
+              "title": "Book",
+              "text": "Create the booking and receive a PNR."
+            }
+          ]
+        },
+        {
+          "id": "b-150",
+          "type": "split",
+          "visible": true,
+          "eyebrow": "Step 1",
+          "title": "Authenticate",
+          "text": "Every request carries your secret key as a Bearer token. Sandbox keys start with sk_test_.",
+          "bullets": [
+            "Keys are scoped per environment",
+            "Rotate keys anytime from your dashboard"
+          ],
+          "codeTitle": "Headers",
+          "reverse": false,
+          "code": "{\n  \"Authorization\": \"Bearer sk_test_51Hx…\",\n  \"Content-Type\": \"application/json\",\n  \"Idempotency-Key\": \"a3f1-…\"\n}"
+        },
+        {
+          "id": "b-151",
+          "type": "split",
+          "visible": true,
+          "eyebrow": "Step 2",
+          "title": "Search flights",
+          "text": "Send a route and date. Results include offers from GDS, NDC and low-cost carriers.",
+          "bullets": [
+            "Results sorted by price by default",
+            "Each offer has a short-lived offer_id"
+          ],
+          "codeTitle": "POST /v1/flight/search",
+          "reverse": true,
+          "code": "{\n  \"segments\": [\n    {\n      \"from\": \"DAC\",\n      \"to\": \"KUL\",\n      \"date\": \"2026-11-02\"\n    }\n  ],\n  \"travelers\": {\n    \"adults\": 1\n  },\n  \"cabin\": \"Economy\"\n}"
+        },
+        {
+          "id": "b-152",
+          "type": "split",
+          "visible": true,
+          "eyebrow": "Step 3 & 4",
+          "title": "Price and book",
+          "text": "Re-price the offer, then book with traveler details. You'll get a PNR and booking ID back.",
+          "bullets": [
+            "Price guarantees last 20 minutes",
+            "Webhooks notify you when tickets are issued"
+          ],
+          "codeTitle": "POST /v1/flight/book",
+          "reverse": false,
+          "code": "{\n  \"offer_id\": \"OF-1192\",\n  \"travelers\": [\n    {\n      \"first_name\": \"Ayesha\",\n      \"last_name\": \"Rahman\",\n      \"dob\": \"1992-04-11\"\n    }\n  ],\n  \"contact\": {\n    \"email\": \"ayesha@example.com\"\n  }\n}"
+        },
+        {
+          "id": "b-153",
+          "type": "cta",
+          "visible": true,
+          "title": "Ready for production?",
+          "text": "Switch your keys to live mode when your integration is approved.",
+          "primary": "Get sandbox keys",
+          "primaryHref": "/contact",
+          "secondary": "Talk to an engineer",
+          "secondaryHref": "/contact"
+        }
+      ]
+    },
+    {
+      "id": "pg-dev-ref",
+      "slug": "developers/api-reference",
+      "title": "API reference",
+      "visible": true,
+      "seoDescription": "Every endpoint across every product.",
+      "hero": {
+        "eyebrow": "API reference",
+        "title": "Every endpoint.",
+        "highlight": "One schema.",
+        "subtitle": "Endpoints for every product, generated from your product catalog.",
+        "primaryLabel": "Get sandbox keys",
+        "primaryHref": "/contact",
+        "secondaryLabel": "Quickstart",
+        "secondaryHref": "/developers/quickstart",
+        "art": "none",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "plane",
+          "building",
+          "train",
+          "car",
+          "globe",
+          "ticket"
+        ],
+        "chips": []
+      },
+      "blocks": [
+        {
+          "id": "b-154",
+          "type": "endpoints",
+          "visible": true,
+          "eyebrow": "Endpoints",
+          "title": "Browse by product",
+          "subtitle": "Filter by product or search for a path."
+        }
+      ]
+    },
+    {
+      "id": "pg-dev-log",
+      "slug": "developers/changelog",
+      "title": "Changelog",
+      "visible": true,
+      "seoDescription": "New features, improvements and fixes.",
+      "hero": {
+        "eyebrow": "Changelog",
+        "title": "What's new.",
+        "highlight": "",
+        "subtitle": "Every release, newest first.",
+        "primaryLabel": "",
+        "primaryHref": "/contact",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "art": "none",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "plane",
+          "building",
+          "train",
+          "car",
+          "globe",
+          "ticket"
+        ],
+        "chips": []
+      },
+      "blocks": [
+        {
+          "id": "b-160",
+          "type": "timeline",
+          "visible": true,
+          "eyebrow": "",
+          "title": "",
+          "subtitle": "",
+          "items": [
+            {
+              "id": "i-155",
+              "date": "Oct 2026",
+              "version": "v1.18",
+              "tag": "New",
+              "title": "Unified NDC + LCC search",
+              "text": "Search airline-direct NDC offers and low-cost carriers in the same request as GDS content."
+            },
+            {
+              "id": "i-156",
+              "date": "Sep 2026",
+              "version": "v1.17",
+              "tag": "New",
+              "title": "Travel eSIM API",
+              "text": "Sell data plans in 175+ countries with instant QR activation."
+            },
+            {
+              "id": "i-157",
+              "date": "Aug 2026",
+              "version": "v1.16",
+              "tag": "Improved",
+              "title": "Faster hotel search",
+              "text": "Median hotel search latency reduced by 38%."
+            },
+            {
+              "id": "i-158",
+              "date": "Jul 2026",
+              "version": "v1.15",
+              "tag": "Fixed",
+              "title": "Refund webhook retries",
+              "text": "Refund events now retry with exponential backoff for 24 hours."
+            },
+            {
+              "id": "i-159",
+              "date": "Jun 2026",
+              "version": "v1.14",
+              "tag": "Deprecated",
+              "title": "Legacy /search/v0 endpoints",
+              "text": "v0 search endpoints will be removed on 31 Dec 2026. Migrate to /v1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pg-dev-status",
+      "slug": "developers/status",
+      "title": "System status",
+      "visible": true,
+      "seoDescription": "Live health of every service.",
+      "hero": {
+        "eyebrow": "Status",
+        "title": "System status.",
+        "highlight": "Live.",
+        "subtitle": "Current health and uptime over the last 60 days for each service.",
+        "primaryLabel": "",
+        "primaryHref": "/contact",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "art": "none",
+        "codeTitle": "",
+        "code": "",
+        "orbitIcons": [
+          "plane",
+          "building",
+          "train",
+          "car",
+          "globe",
+          "ticket"
+        ],
+        "chips": []
+      },
+      "blocks": [
+        {
+          "id": "b-168",
+          "type": "status",
+          "visible": true,
+          "eyebrow": "",
+          "title": "Services",
+          "subtitle": "",
+          "items": [
+            {
+              "id": "i-161",
+              "name": "Flight search",
+              "status": "operational",
+              "uptime": 99.98
+            },
+            {
+              "id": "i-162",
+              "name": "Flight booking & ticketing",
+              "status": "operational",
+              "uptime": 99.96
+            },
+            {
+              "id": "i-163",
+              "name": "Hotel search",
+              "status": "operational",
+              "uptime": 99.97
+            },
+            {
+              "id": "i-164",
+              "name": "Hotel booking",
+              "status": "operational",
+              "uptime": 99.99
+            },
+            {
+              "id": "i-165",
+              "name": "Transfers & activities",
+              "status": "operational",
+              "uptime": 99.94
+            },
+            {
+              "id": "i-166",
+              "name": "Webhooks",
+              "status": "degraded",
+              "uptime": 99.71
+            },
+            {
+              "id": "i-167",
+              "name": "Sandbox",
+              "status": "operational",
+              "uptime": 99.9
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
