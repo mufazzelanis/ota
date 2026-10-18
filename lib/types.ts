@@ -150,6 +150,8 @@ export type NavItem = {
   type: "link" | "dropdown" | "products";
   href: string;
   highlight: boolean;
+  /** Dropdowns only: also list this menu as a footer column. Missing means true. */
+  showInFooter?: boolean;
   badge: string;
   visible: boolean;
   children: NavChild[];

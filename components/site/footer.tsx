@@ -26,8 +26,8 @@ function Social({ href, label, path }: { href: string; label: string; path: stri
 export function Footer({ c }: { c: Content }) {
   const s = c.settings;
   const products = c.products.filter((p) => p.visible);
-  // Every visible dropdown in the header becomes a footer column.
-  const navColumns = c.navigation.filter((n) => n.visible && n.type === "dropdown" && n.children.length);
+  // Visible header dropdowns become footer columns unless switched off in Navigation.
+  const navColumns = c.navigation.filter((n) => n.visible && n.type === "dropdown" && n.children.length && n.showInFooter !== false);
   return (
     <footer className="bg-[color-mix(in_oklab,var(--brand-dark)_60%,black)] text-white/60">
       <div className="h-1 bg-linear-to-r from-brand via-accent to-brand" />
@@ -92,15 +92,21 @@ export function Footer({ c }: { c: Content }) {
             </li>
             <li className="flex gap-2.5">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-              <a href={`mailto:${s.email}`} className="hover:text-white">{s.email}</a>
+              <a href={`mailto:${s.email}`} className="hover:text-white">
+                {/* Prefer breaking before the @ rather than mid-domain. */}
+                {s.email.split("@")[0]}
+                <wbr />@{s.email.split("@").slice(1).join("@")}
+              </a>
             </li>
             <li className="flex gap-2.5">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-              <a href={`tel:${s.phone.replace(/\s/g, "")}`} className="hover:text-white">{s.phone}</a>
+              <a href={`tel:${s.phone.replace(/\s/g, "")}`} className="whitespace-nowrap hover:text-white">{s.phone}</a>
             </li>
             <li className="flex gap-2.5">
               <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-              <a href={`https://wa.me/${s.whatsapp.replace(/\D/g, "")}`} className="hover:text-white">WhatsApp {s.whatsapp}</a>
+              <a href={`https://wa.me/${s.whatsapp.replace(/\D/g, "")}`} className="hover:text-white">
+                WhatsApp <span className="whitespace-nowrap">{s.whatsapp}</span>
+              </a>
             </li>
           </ul>
         </div>

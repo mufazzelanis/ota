@@ -55,6 +55,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { key: "href", label: "Link URL", type: "text", help: "For links, e.g. /hotels or /#faq. Dropdowns ignore this." },
       { key: "badge", label: "Badge (optional)", type: "text", help: 'Small pill such as "New"' },
       { key: "highlight", label: "Highlight in accent color", type: "boolean" },
+      { key: "showInFooter", label: "Show as footer column", type: "boolean", help: "Dropdown menus only" },
       visible,
       {
         key: "children", label: "Dropdown items", type: "repeater", wide: true, itemLabel: "label",

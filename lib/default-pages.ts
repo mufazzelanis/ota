@@ -29,7 +29,7 @@ const cta = (title: string, text: string) =>
 export const DEFAULT_NAVIGATION: NavItem[] = [
   { id: "nav-products", label: "Products", type: "products", href: "/#products", highlight: false, badge: "", visible: true, children: [] },
   {
-    id: "nav-coverage", label: "Coverage", type: "dropdown", href: "", highlight: true, badge: "", visible: true,
+    id: "nav-coverage", label: "Coverage", type: "dropdown", href: "", highlight: true, showInFooter: false, badge: "", visible: true,
     children: [
       { id: "nc1", label: "Flight coverage", href: "/coverage/flights", icon: "plane", description: "Airlines, GDS, NDC and LCC content by region" },
       { id: "nc2", label: "Hotel coverage", href: "/coverage/hotels", icon: "building", description: "Properties and chains across 200+ countries" },
@@ -41,7 +41,7 @@ export const DEFAULT_NAVIGATION: NavItem[] = [
   { id: "nav-gds", label: "GDS", type: "link", href: "/gds", highlight: false, badge: "", visible: true, children: [] },
   { id: "nav-ndc", label: "NDC", type: "link", href: "/ndc", highlight: true, badge: "New", visible: true, children: [] },
   {
-    id: "nav-dev", label: "Developers", type: "dropdown", href: "", highlight: false, badge: "", visible: true,
+    id: "nav-dev", label: "Developers", type: "dropdown", href: "", highlight: false, showInFooter: true, badge: "", visible: true,
     children: [
       { id: "nd1", label: "Developer hub", href: "/developers", icon: "code", description: "Everything you need to build" },
       { id: "nd2", label: "Quickstart", href: "/developers/quickstart", icon: "rocket", description: "First booking in under an hour" },

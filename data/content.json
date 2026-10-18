@@ -811,7 +811,8 @@
           "icon": "globe",
           "description": "Point-of-sale markets and currencies"
         }
-      ]
+      ],
+      "showInFooter": false
     },
     {
       "id": "nav-hotels",
@@ -880,7 +881,8 @@
           "icon": "zap",
           "description": "Live health of every service"
         }
-      ]
+      ],
+      "showInFooter": true
     },
     {
       "id": "nav-uc",
