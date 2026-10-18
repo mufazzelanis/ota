@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { Icon, TONES } from "@/lib/icons";
 import type { NavItem, Product } from "@/lib/types";
@@ -13,6 +14,10 @@ type Panel = { id: string; left: number; top: number; width: number };
 const GUTTER = 16;
 // Server render and first paint use the lg breakpoint; after mount we measure.
 const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
+
+// false during SSR and hydration, true afterwards: safe gate for portals.
+const noopSubscribe = () => () => {};
+const useIsClient = () => useSyncExternalStore(noopSubscribe, () => true, () => false);
 
 function Badge({ text }: { text: string }) {
   if (!text) return null;
@@ -38,6 +43,7 @@ export function Navbar({
   nav: NavItem[];
 }) {
   const items = nav.filter((n) => n.visible);
+  const isClient = useIsClient();
   const [scrolled, setScrolled] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -219,8 +225,11 @@ export function Navbar({
         </div>
       </nav>
 
-      {/* Drawer: clipped and non-interactive while closed so it never adds width. */}
-      <div className={`fixed inset-0 z-50 overflow-hidden ${drawer ? "visible" : "invisible pointer-events-none delay-300"}`}>
+      {/* Drawer is portaled to <body>: the header's backdrop-filter would otherwise
+          become its containing block and clip it to the header's height. */}
+      {isClient &&
+        createPortal(
+      <div className={`fixed inset-0 z-60 overflow-hidden ${drawer ? "visible" : "invisible pointer-events-none delay-300"}`}>
         <div className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${drawer ? "opacity-100" : "opacity-0"}`} onClick={() => setDrawer(false)} />
         <div
           role="dialog"
@@ -284,7 +293,9 @@ export function Navbar({
             </Link>
           </div>
         </div>
-      </div>
+      </div>,
+          document.body,
+        )}
     </header>
   );
 }

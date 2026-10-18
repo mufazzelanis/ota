@@ -45,7 +45,6 @@ export const DEFAULT_NAVIGATION: NavItem[] = [
     children: [
       { id: "nd1", label: "Developer hub", href: "/developers", icon: "code", description: "Everything you need to build" },
       { id: "nd2", label: "Quickstart", href: "/developers/quickstart", icon: "rocket", description: "First booking in under an hour" },
-      { id: "nd3", label: "API reference", href: "/developers/api-reference", icon: "layers", description: "Every endpoint, one schema" },
       { id: "nd4", label: "Changelog", href: "/developers/changelog", icon: "trending", description: "What shipped and when" },
       { id: "nd5", label: "System status", href: "/developers/status", icon: "zap", description: "Live health of every service" },
     ],
@@ -198,12 +197,12 @@ export const DEFAULT_PAGES: Page[] = [
         eyebrow: "Markets", title: "Supported markets", subtitle: "", searchPlaceholder: "Search countries or currencies…",
         regions: items(REGIONS.map((r, i) => ({ name: r, value: `${[8, 14, 44, 18, 3, 54][i]}`, label: "markets" }))),
         items: items([
-          { name: "Bangladesh", code: "BDT", region: "South Asia", meta: "Local POS, BDT settlement", tags: "Flights, Hotels, Visas" },
-          { name: "India", code: "INR", region: "South Asia", meta: "Local POS", tags: "Flights, Hotels, Rail" },
+          { name: "Bangladesh", code: "BDT", region: "South Asia", meta: "Local POS, BDT settlement", tags: "Flights, Hotels, Transfers" },
+          { name: "India", code: "INR", region: "South Asia", meta: "Local POS", tags: "Flights, Hotels, Activities" },
           { name: "United Arab Emirates", code: "AED", region: "Middle East", meta: "Local POS", tags: "Flights, Hotels, Transfers" },
-          { name: "Saudi Arabia", code: "SAR", region: "Middle East", meta: "Local POS", tags: "Flights, Hotels, Visas" },
-          { name: "United Kingdom", code: "GBP", region: "Europe", meta: "Local POS", tags: "Flights, Hotels, Rail" },
-          { name: "Germany", code: "EUR", region: "Europe", meta: "Local POS", tags: "Flights, Hotels, Rail" },
+          { name: "Saudi Arabia", code: "SAR", region: "Middle East", meta: "Local POS", tags: "Flights, Hotels, Transfers" },
+          { name: "United Kingdom", code: "GBP", region: "Europe", meta: "Local POS", tags: "Flights, Hotels, Activities" },
+          { name: "Germany", code: "EUR", region: "Europe", meta: "Local POS", tags: "Flights, Hotels, Activities" },
           { name: "Malaysia", code: "MYR", region: "East Asia", meta: "Local POS", tags: "Flights, Hotels" },
           { name: "United States", code: "USD", region: "North America", meta: "Local POS", tags: "Flights, Hotels, Cars" },
           { name: "Kenya", code: "KES", region: "Africa", meta: "Local POS", tags: "Flights, Hotels" },
@@ -337,11 +336,11 @@ export const DEFAULT_PAGES: Page[] = [
   // ── Developers ────────────────────────────────────────────────────────
   {
     id: "pg-dev", slug: "developers", title: "Developer hub", visible: true,
-    seoDescription: "Docs, quickstart, API reference, changelog and status.",
+    seoDescription: "Docs, quickstart, changelog and status.",
     hero: hero({
       eyebrow: "Developers", title: "Built by engineers,", highlight: "for engineers.",
       subtitle: "One REST API, one JSON schema, predictable errors and a sandbox that behaves like production.",
-      primaryLabel: "Start the quickstart", primaryHref: "/developers/quickstart", secondaryLabel: "API reference", secondaryHref: "/developers/api-reference",
+      primaryLabel: "Start the quickstart", primaryHref: "/developers/quickstart", secondaryLabel: "System status", secondaryHref: "/developers/status",
       art: "code", codeTitle: "curl",
       code: json({ request: "curl -X POST https://sandbox.api.example.com/v1/flight/search", headers: { Authorization: "Bearer sk_test_…" }, body: { from: "DAC", to: "KUL", date: "2026-11-02" } }),
       chips: ["OpenAPI 3.1", "SDK examples", "99.95% uptime"],
@@ -351,7 +350,6 @@ export const DEFAULT_PAGES: Page[] = [
         eyebrow: "Start here", title: "Everything you need to build", subtitle: "",
         items: items([
           { title: "Quickstart", icon: "rocket", href: "/developers/quickstart", label: "Start building", text: "Make your first search and booking in under an hour." },
-          { title: "API reference", icon: "layers", href: "/developers/api-reference", label: "Browse endpoints", text: "Every endpoint across every product, in one schema." },
           { title: "Changelog", icon: "trending", href: "/developers/changelog", label: "See releases", text: "New features, improvements and deprecations." },
           { title: "System status", icon: "zap", href: "/developers/status", label: "Check status", text: "Live health and uptime for every service." },
           { title: "Coverage", icon: "globe", href: "/coverage/flights", label: "Explore coverage", text: "Which content is available in which markets." },
@@ -373,7 +371,7 @@ export const DEFAULT_PAGES: Page[] = [
     seoDescription: "From sandbox keys to your first booking.",
     hero: hero({
       eyebrow: "Quickstart", title: "Your first booking", highlight: "in under an hour.", art: "none",
-      subtitle: "Four steps from sandbox keys to a confirmed test booking.", primaryLabel: "Get sandbox keys", secondaryLabel: "API reference", secondaryHref: "/developers/api-reference",
+      subtitle: "Four steps from sandbox keys to a confirmed test booking.", primaryLabel: "Get sandbox keys", secondaryLabel: "Developer hub", secondaryHref: "/developers",
     }),
     blocks: [
       block("steps", {
@@ -402,15 +400,6 @@ export const DEFAULT_PAGES: Page[] = [
       }),
       cta("Ready for production?", "Switch your keys to live mode when your integration is approved."),
     ],
-  },
-  {
-    id: "pg-dev-ref", slug: "developers/api-reference", title: "API reference", visible: true,
-    seoDescription: "Every endpoint across every product.",
-    hero: hero({
-      eyebrow: "API reference", title: "Every endpoint.", highlight: "One schema.", art: "none",
-      subtitle: "Endpoints for every product, generated from your product catalog.", primaryLabel: "Get sandbox keys", secondaryLabel: "Quickstart", secondaryHref: "/developers/quickstart",
-    }),
-    blocks: [block("endpoints", { eyebrow: "Endpoints", title: "Browse by product", subtitle: "Filter by product or search for a path." })],
   },
   {
     id: "pg-dev-log", slug: "developers/changelog", title: "Changelog", visible: true,

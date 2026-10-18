@@ -10,7 +10,7 @@
     "brandName": "Tripnexa",
     "logoText": "TN",
     "tagline": "The travel API for OTAs, TMCs and travel platforms",
-    "description": "One connection to flights, hotels, transfers, rail, visas and more. Built for travel businesses that want to launch fast and scale without re-platforming.",
+    "description": "One connection to flights, hotels, transfers, activities, eSIM and more. Built for travel businesses that want to launch fast and scale without re-platforming.",
     "email": "hello@tripnexa.com",
     "phone": "+880 1700-000000",
     "whatsapp": "+880 1700-000000",
@@ -40,7 +40,7 @@
       "Flights, hotels and more"
     ],
     "highlight": "in one schema",
-    "subtitle": "Search, book and ticket across global distribution systems, airline-direct NDC and low-cost carriers, plus hotels, transfers, rail, eSIM and visas, through a single integration. No supplier contracts to sign and a flat fee per booking instead of a percentage.",
+    "subtitle": "Search, book and ticket across global distribution systems, airline-direct NDC and low-cost carriers, plus hotels, transfers, activities, tour packages and eSIM, through a single integration. No supplier contracts to sign and a flat fee per booking instead of a percentage.",
     "primaryCta": "Request API Access",
     "secondaryCta": "Explore the API",
     "videoLabel": "Watch the 60-second tour",
@@ -69,7 +69,7 @@
     },
     {
       "id": "s3",
-      "value": 12,
+      "value": 9,
       "prefix": "",
       "suffix": "",
       "label": "Product families, one integration",
@@ -157,11 +157,6 @@
       "visible": true
     },
     {
-      "id": "pa6",
-      "name": "Rail Operators",
-      "visible": true
-    },
-    {
       "id": "pa7",
       "name": "Transfer Networks",
       "visible": true
@@ -176,7 +171,7 @@
     "eyebrow": "About us",
     "title": "The infrastructure layer for modern travel businesses.",
     "paragraphs": [
-      "We aggregate inventory from global distribution systems, low-cost carriers, hotel chains, transfer and rail suppliers and tour operators, then expose it through one normalized REST API. Connect once and reach a worldwide supply network without negotiating individual contracts or juggling data formats.",
+      "We aggregate inventory from global distribution systems, low-cost carriers, hotel chains, transfer suppliers and tour operators, then expose it through one normalized REST API. Connect once and reach a worldwide supply network without negotiating individual contracts or juggling data formats.",
       "We are a technology intermediary, not a travel operator. Bookings are fulfilled by the underlying suppliers; we provide the connectivity, normalization and developer experience so your team can focus on product, not plumbing."
     ]
   },
@@ -277,26 +272,6 @@
       "visible": true
     },
     {
-      "id": "pr4",
-      "slug": "car-rental-api",
-      "name": "Car Rental API",
-      "icon": "carFront",
-      "tone": "indigo",
-      "short": "Self-drive rentals from global providers: every vehicle class, real-time rates, one-way rentals and extras.",
-      "description": "Compare rental providers side by side with normalized vehicle classes, insurance products and extras.",
-      "features": [
-        "Global rental providers",
-        "One-way rentals",
-        "Insurance & extras",
-        "Normalized vehicle classes"
-      ],
-      "endpoints": [
-        "POST /v1/car/search",
-        "POST /v1/car/book"
-      ],
-      "visible": true
-    },
-    {
       "id": "pr5",
       "slug": "activities-api",
       "name": "Activities & Tours API",
@@ -333,46 +308,6 @@
       "endpoints": [
         "GET /v1/package/search",
         "POST /v1/package/order"
-      ],
-      "visible": true
-    },
-    {
-      "id": "pr7",
-      "slug": "train-api",
-      "name": "Train API",
-      "icon": "train",
-      "tone": "sky",
-      "short": "Search rail journeys, validate fares, book and cancel tickets next to your flight results.",
-      "description": "Rail inventory alongside air, so travellers can compare door-to-door options in one place.",
-      "features": [
-        "Point-to-point rail",
-        "Fare validation",
-        "E-tickets",
-        "Cancellations"
-      ],
-      "endpoints": [
-        "POST /v1/rail/search",
-        "POST /v1/rail/book"
-      ],
-      "visible": true
-    },
-    {
-      "id": "pr8",
-      "slug": "visa-api",
-      "name": "Visa API",
-      "icon": "stamp",
-      "tone": "indigo",
-      "short": "Search visa packages, validate requirements and create the application in the same checkout.",
-      "description": "Visa requirements and applications bundled into the booking flow, reducing drop-off.",
-      "features": [
-        "Requirement lookup",
-        "Document checklist",
-        "Application orders",
-        "Status tracking"
-      ],
-      "endpoints": [
-        "GET /v1/visa/requirements",
-        "POST /v1/visa/apply"
       ],
       "visible": true
     },
@@ -640,7 +575,7 @@
     {
       "id": "f1",
       "question": "What is this platform?",
-      "answer": "A unified travel API that gives you flights, hotels, transfers, rail, activities, visas and more through one normalized REST integration.",
+      "answer": "A unified travel API that gives you flights, hotels, transfers, activities, tour packages, eSIM and more through one normalized REST integration.",
       "visible": true
     },
     {
@@ -652,7 +587,7 @@
     {
       "id": "f3",
       "question": "What inventory does the API support?",
-      "answer": "Flights (GDS, NDC and LCC), hotels, transfers, car rental, activities, tour packages, rail, visas, lounges, fast track, meet & greet, eSIM and events.",
+      "answer": "Flights (GDS, NDC and LCC), hotels, transfers, activities, tour packages, lounges, fast track, meet & greet and eSIM.",
       "visible": true
     },
     {
@@ -930,13 +865,6 @@
           "href": "/developers/quickstart",
           "icon": "rocket",
           "description": "First booking in under an hour"
-        },
-        {
-          "id": "nd3",
-          "label": "API reference",
-          "href": "/developers/api-reference",
-          "icon": "layers",
-          "description": "Every endpoint, one schema"
         },
         {
           "id": "nd4",
@@ -1759,7 +1687,7 @@
               "code": "BDT",
               "region": "South Asia",
               "meta": "Local POS, BDT settlement",
-              "tags": "Flights, Hotels, Visas"
+              "tags": "Flights, Hotels, Transfers"
             },
             {
               "id": "i-86",
@@ -1767,7 +1695,7 @@
               "code": "INR",
               "region": "South Asia",
               "meta": "Local POS",
-              "tags": "Flights, Hotels, Rail"
+              "tags": "Flights, Hotels, Activities"
             },
             {
               "id": "i-87",
@@ -1783,7 +1711,7 @@
               "code": "SAR",
               "region": "Middle East",
               "meta": "Local POS",
-              "tags": "Flights, Hotels, Visas"
+              "tags": "Flights, Hotels, Transfers"
             },
             {
               "id": "i-89",
@@ -1791,7 +1719,7 @@
               "code": "GBP",
               "region": "Europe",
               "meta": "Local POS",
-              "tags": "Flights, Hotels, Rail"
+              "tags": "Flights, Hotels, Activities"
             },
             {
               "id": "i-90",
@@ -1799,7 +1727,7 @@
               "code": "EUR",
               "region": "Europe",
               "meta": "Local POS",
-              "tags": "Flights, Hotels, Rail"
+              "tags": "Flights, Hotels, Activities"
             },
             {
               "id": "i-91",
@@ -2246,7 +2174,7 @@
       "slug": "developers",
       "title": "Developer hub",
       "visible": true,
-      "seoDescription": "Docs, quickstart, API reference, changelog and status.",
+      "seoDescription": "Docs, quickstart, changelog and status.",
       "hero": {
         "eyebrow": "Developers",
         "title": "Built by engineers,",
@@ -2254,8 +2182,8 @@
         "subtitle": "One REST API, one JSON schema, predictable errors and a sandbox that behaves like production.",
         "primaryLabel": "Start the quickstart",
         "primaryHref": "/developers/quickstart",
-        "secondaryLabel": "API reference",
-        "secondaryHref": "/developers/api-reference",
+        "secondaryLabel": "System status",
+        "secondaryHref": "/developers/status",
         "art": "code",
         "codeTitle": "curl",
         "code": "{\n  \"request\": \"curl -X POST https://sandbox.api.example.com/v1/flight/search\",\n  \"headers\": {\n    \"Authorization\": \"Bearer sk_test_…\"\n  },\n  \"body\": {\n    \"from\": \"DAC\",\n    \"to\": \"KUL\",\n    \"date\": \"2026-11-02\"\n  }\n}",
@@ -2289,14 +2217,6 @@
               "href": "/developers/quickstart",
               "label": "Start building",
               "text": "Make your first search and booking in under an hour."
-            },
-            {
-              "id": "i-135",
-              "title": "API reference",
-              "icon": "layers",
-              "href": "/developers/api-reference",
-              "label": "Browse endpoints",
-              "text": "Every endpoint across every product, in one schema."
             },
             {
               "id": "i-136",
@@ -2376,8 +2296,8 @@
         "subtitle": "Four steps from sandbox keys to a confirmed test booking.",
         "primaryLabel": "Get sandbox keys",
         "primaryHref": "/contact",
-        "secondaryLabel": "API reference",
-        "secondaryHref": "/developers/api-reference",
+        "secondaryLabel": "Developer hub",
+        "secondaryHref": "/developers",
         "art": "none",
         "codeTitle": "",
         "code": "",
@@ -2477,45 +2397,6 @@
           "primaryHref": "/contact",
           "secondary": "Talk to an engineer",
           "secondaryHref": "/contact"
-        }
-      ]
-    },
-    {
-      "id": "pg-dev-ref",
-      "slug": "developers/api-reference",
-      "title": "API reference",
-      "visible": true,
-      "seoDescription": "Every endpoint across every product.",
-      "hero": {
-        "eyebrow": "API reference",
-        "title": "Every endpoint.",
-        "highlight": "One schema.",
-        "subtitle": "Endpoints for every product, generated from your product catalog.",
-        "primaryLabel": "Get sandbox keys",
-        "primaryHref": "/contact",
-        "secondaryLabel": "Quickstart",
-        "secondaryHref": "/developers/quickstart",
-        "art": "none",
-        "codeTitle": "",
-        "code": "",
-        "orbitIcons": [
-          "plane",
-          "building",
-          "train",
-          "car",
-          "globe",
-          "ticket"
-        ],
-        "chips": []
-      },
-      "blocks": [
-        {
-          "id": "b-154",
-          "type": "endpoints",
-          "visible": true,
-          "eyebrow": "Endpoints",
-          "title": "Browse by product",
-          "subtitle": "Filter by product or search for a path."
         }
       ]
     },

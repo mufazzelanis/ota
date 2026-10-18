@@ -15,7 +15,7 @@ export const DEFAULT_CONTENT: Content = {
     logoText: "TN",
     tagline: "The travel API for OTAs, TMCs and travel platforms",
     description:
-      "One connection to flights, hotels, transfers, rail, visas and more. Built for travel businesses that want to launch fast and scale without re-platforming.",
+      "One connection to flights, hotels, transfers, activities, eSIM and more. Built for travel businesses that want to launch fast and scale without re-platforming.",
     email: "hello@tripnexa.com",
     phone: "+880 1700-000000",
     whatsapp: "+880 1700-000000",
@@ -45,7 +45,7 @@ export const DEFAULT_CONTENT: Content = {
     titleLines: ["One travel API.", "Flights, hotels and more"],
     highlight: "in one schema",
     subtitle:
-      "Search, book and ticket across global distribution systems, airline-direct NDC and low-cost carriers, plus hotels, transfers, rail, eSIM and visas, through a single integration. No supplier contracts to sign and a flat fee per booking instead of a percentage.",
+      "Search, book and ticket across global distribution systems, airline-direct NDC and low-cost carriers, plus hotels, transfers, activities, tour packages and eSIM, through a single integration. No supplier contracts to sign and a flat fee per booking instead of a percentage.",
     primaryCta: "Request API Access",
     secondaryCta: "Explore the API",
     videoLabel: "Watch the 60-second tour",
@@ -55,7 +55,7 @@ export const DEFAULT_CONTENT: Content = {
   stats: [
     { id: "s1", value: 700, prefix: "", suffix: "+", label: "Airlines & LCC connections", visible: true },
     { id: "s2", value: 2, prefix: "", suffix: "M+", label: "Hotel properties worldwide", visible: true },
-    { id: "s3", value: 12, prefix: "", suffix: "", label: "Product families, one integration", visible: true },
+    { id: "s3", value: 9, prefix: "", suffix: "", label: "Product families, one integration", visible: true },
     { id: "s4", value: 1, prefix: "<", suffix: "s", label: "Typical search response time", visible: true },
   ],
 
@@ -146,7 +146,6 @@ export const DEFAULT_CONTENT: Content = {
     { id: "pa3", name: "Low-cost Carriers", visible: true },
     { id: "pa4", name: "Hotel Chains", visible: true },
     { id: "pa5", name: "Bed Banks", visible: true },
-    { id: "pa6", name: "Rail Operators", visible: true },
     { id: "pa7", name: "Transfer Networks", visible: true },
     { id: "pa8", name: "eSIM Carriers", visible: true },
   ],
@@ -155,7 +154,7 @@ export const DEFAULT_CONTENT: Content = {
     eyebrow: "About us",
     title: "The infrastructure layer for modern travel businesses.",
     paragraphs: [
-      "We aggregate inventory from global distribution systems, low-cost carriers, hotel chains, transfer and rail suppliers and tour operators, then expose it through one normalized REST API. Connect once and reach a worldwide supply network without negotiating individual contracts or juggling data formats.",
+      "We aggregate inventory from global distribution systems, low-cost carriers, hotel chains, transfer suppliers and tour operators, then expose it through one normalized REST API. Connect once and reach a worldwide supply network without negotiating individual contracts or juggling data formats.",
       "We are a technology intermediary, not a travel operator. Bookings are fulfilled by the underlying suppliers; we provide the connectivity, normalization and developer experience so your team can focus on product, not plumbing.",
     ],
   },
@@ -193,14 +192,6 @@ export const DEFAULT_CONTENT: Content = {
       visible: true,
     },
     {
-      id: "pr4", slug: "car-rental-api", name: "Car Rental API", icon: "carFront", tone: "indigo",
-      short: "Self-drive rentals from global providers: every vehicle class, real-time rates, one-way rentals and extras.",
-      description: "Compare rental providers side by side with normalized vehicle classes, insurance products and extras.",
-      features: ["Global rental providers", "One-way rentals", "Insurance & extras", "Normalized vehicle classes"],
-      endpoints: ["POST /v1/car/search", "POST /v1/car/book"],
-      visible: true,
-    },
-    {
       id: "pr5", slug: "activities-api", name: "Activities & Tours API", icon: "ticket", tone: "amber",
       short: "Local tours, unique experiences, theme park tickets and iconic attractions worldwide.",
       description: "Bookable experiences with live availability, timeslots and instant mobile vouchers.",
@@ -214,22 +205,6 @@ export const DEFAULT_CONTENT: Content = {
       description: "Sell curated multi-day packages with itineraries, inclusions and validated pricing.",
       features: ["City and theme search", "Day-by-day itineraries", "Price validation", "Order & issuance"],
       endpoints: ["GET /v1/package/search", "POST /v1/package/order"],
-      visible: true,
-    },
-    {
-      id: "pr7", slug: "train-api", name: "Train API", icon: "train", tone: "sky",
-      short: "Search rail journeys, validate fares, book and cancel tickets next to your flight results.",
-      description: "Rail inventory alongside air, so travellers can compare door-to-door options in one place.",
-      features: ["Point-to-point rail", "Fare validation", "E-tickets", "Cancellations"],
-      endpoints: ["POST /v1/rail/search", "POST /v1/rail/book"],
-      visible: true,
-    },
-    {
-      id: "pr8", slug: "visa-api", name: "Visa API", icon: "stamp", tone: "indigo",
-      short: "Search visa packages, validate requirements and create the application in the same checkout.",
-      description: "Visa requirements and applications bundled into the booking flow, reducing drop-off.",
-      features: ["Requirement lookup", "Document checklist", "Application orders", "Status tracking"],
-      endpoints: ["GET /v1/visa/requirements", "POST /v1/visa/apply"],
       visible: true,
     },
     {
@@ -305,9 +280,9 @@ export const DEFAULT_CONTENT: Content = {
   ],
 
   faqs: [
-    { id: "f1", question: "What is this platform?", answer: "A unified travel API that gives you flights, hotels, transfers, rail, activities, visas and more through one normalized REST integration.", visible: true },
+    { id: "f1", question: "What is this platform?", answer: "A unified travel API that gives you flights, hotels, transfers, activities, tour packages, eSIM and more through one normalized REST integration.", visible: true },
     { id: "f2", question: "Who is it for?", answer: "OTAs, TMCs, corporate booking tools, travel-tech startups, loyalty programs and AI travel agents.", visible: true },
-    { id: "f3", question: "What inventory does the API support?", answer: "Flights (GDS, NDC and LCC), hotels, transfers, car rental, activities, tour packages, rail, visas, lounges, fast track, meet & greet, eSIM and events.", visible: true },
+    { id: "f3", question: "What inventory does the API support?", answer: "Flights (GDS, NDC and LCC), hotels, transfers, activities, tour packages, lounges, fast track, meet & greet and eSIM.", visible: true },
     { id: "f4", question: "How long does integration take?", answer: "Most teams make their first sandbox booking within a day and go live within two to six weeks.", visible: true },
     { id: "f5", question: "Are you a travel agent or an infrastructure provider?", answer: "An infrastructure provider. Bookings are fulfilled by the underlying suppliers; we provide connectivity and normalization.", visible: true },
     { id: "f6", question: "How is data secured?", answer: "TLS everywhere, encrypted storage, scoped API keys, IP allow-listing and audit logs.", visible: true },
